@@ -1,5 +1,8 @@
 # classroom
-This is my public facing repo.  You can find code, assignments, and in class examples in here.  What you will NOT find are my answers or exams.
+This is my public facing repo for my classrooms.  You can find code, assignments, and in class examples in here.  What you will NOT find are my answers or exams.
+
+While this is intended as a resource for my students, it is public to anyone who stumbles upon it.
+If you are antoher instructor, I merely request credit me in passing if you use some of my material. 
 
 Classes are organized by grokable folder name, but not by course number, as those change from school to school.
 
