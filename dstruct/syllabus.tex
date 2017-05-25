@@ -1,0 +1,235 @@
+\documentclass[10pt, letter]{article}
+\usepackage{fancyhdr, lastpage}
+\usepackage[english]{babel}
+\usepackage[super]{nth}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+%\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{hyperref}
+
+\pagestyle{fancy}
+\setlength{\headheight}{15.2pt}
+\rhead{Syllabus}
+\lhead{Program Design and Abstraction}
+
+\title{Syllabus \\ CIS 2168 - Data Structures\\ Spring 2017}
+\author{Dr. Andrew Rosen  \\ andrew.rosen@temple.edu}
+\date{}
+\begin{document}
+\maketitle
+
+\section{Course Details}
+
+An introduction to Computer Science. Topics include:
+\begin{itemize}
+	\item Generics
+	\item Inheritance
+	\item Array Lists
+	\item Time Complexity
+	\item Linked Lists
+	\item Stacks
+	\item Queues
+	\item Recursion - featuring mazes and chess
+	\item Trees
+	\item Heaps
+	\item Huffman Trees
+	\item Sorting Algorithms
+	\item Hash Tables
+	\item Graphs
+\end{itemize}
+%There is an assumption of \textbf{some programming knowledge} and math skills.
+
+
+
+
+\subsection*{Time and Place}
+Sections 001 and 002 meet Monday and Wednesday 12:30pm-1:50pm in Tuttleman 302.
+The evening sections 007 and 008 meet Tuesday from 5:30 to 8:00.
+
+
+\subsubsection*{Labs}
+\begin{description}
+\item[001] Friday 12pm in SERC 357
+\item[002] Thursday 9am in SERC 204
+\item[007] Thursday 5:30 in SERC 357
+\item[008] Thursday 3:00 in SERC 357
+\end{description}
+
+
+
+\subsection*{Prerequisites}
+A grade of C or better in CIS 1166 and 1068.
+We will assume that you know how to use Java and have started to learn how to think abstractly.
+
+
+
+
+\subsection*{Textbook}
+\begin{itemize}
+	\item Data Structures: Abstraction and Design Using Java, Second Edition Elliot B. Koffman, Paul A. T. Wolfgang Wiley 2010
+\end{itemize}
+
+I will be roughly following the material presented in the book and will cover all chapters except possibly 9, and only for reasons of time constraints.
+I recommend getting the book.
+
+\subsection*{Office hours}
+My office is SERC 349.
+My office hours are Monday 3:00-4:00, Thursday 12:00-1:30 PM, and by appointment.
+If you cannot meet me during my office hours or need to meet me for help at some other time, please email me to arrange an appointment. 
+
+\subsection*{TA Information}
+
+TAs will be present during labs to assist you.
+You can walk in for office hours during these times, or make an appointment at an alternate time.
+You can meet with a TA listed below even if you are not in their section.
+
+{\footnotesize
+	\begin{tabular}{l l l l l}
+		TA & Email &Office Hours & Office Location \\ \hline
+		Linxiao Dai & linxiao.dai@temple.edu & 1:00-200 T & SERC 332 \\
+		Djordje Gligorijevic & gligorijevic@temple.edu & 1:00-3:00 R & SERC 334\\
+		Ning Wang & ning.wang@temple.edu & 9:30-11:30 T & SERC 332\\
+	\end{tabular}
+}
+
+
+
+
+
+%\subsection*{Course Goals}
+%This course will cover:
+
+%\begin{itemize}
+%	\item Learn what Computer Science is.
+%	\item Java programming 
+%	\item Basic Object-Oriented design.
+%	\begin{itemize}
+%		\item Inheritance
+%		\item Encapsulation
+%		\item Polymorphism
+%	\end{itemize}
+%	\item Learn how to think and solve problems.
+%\end{itemize}
+
+
+
+\subsection*{Attendance}
+Attendance is expected for both lectures and labs.  
+If you arrive late, please do your best to enter quietly.  
+Lectures will cover more content than is present in the book and it is highly unlikely you will succeed without attending lectures.
+I am also prone to mentioning what will and won't be on the test, up to and including exact questions.
+
+
+
+\subsection*{Academic Honesty}
+All work submitted for grading must be the student's own work. A student that submits an assignment that copies the work of another, in whole or in part, will be assigned a grade of zero for that assignment. Any student found to be cheating on an examination will receive a score of zero for that exam. Cheating on an assignment or exam may result in dismissal from the course and notification of the Dean of Students.
+
+When in doubt, provide a citation.
+Working with others and creating your own unique solutions is not cheating.
+We encourage you to ask your classmates for help and to collaborate.
+Copying someone else's work is cheating and will be dealt with accordingly.
+
+
+\subsection*{Disabilities}
+Any student who has a need for accommodation based on the impact of a documented disability should contact me so we can privately discuss how I can help. 
+If you have not done so already, please contact Disability Resources and Services (DRS) at 215-204-1280 in 100 Ritter Annex to learn more about the resources available to you.
+I will work with DRS to coordinate reasonable accommodations for all students with documented disabilities.
+
+
+\subsection*{Recordings}
+I will be recording my lectures via my laptop.
+This is not meant as a substitute for class, but as a study aid, as my webcam cannot capture the entire whiteboard.
+
+\section{Assignments and Labs}
+Assignments and Labs are intrinsically tied.
+Your assignments are posted electronically on Blackboard.
+You will receive an assignment approximately every week on Thursday and due at 6am on Saturday the following week (or two weeks later for a tough assignment).
+
+Lab sessions are dedicated time for you to work on assignments.
+I or the TA will explain the assignment at the beginning of lab and we will be available to aid you and answer any questions you have.
+Attendance is expected.
+
+
+\subsection*{Turning in}
+To get a grade on your assignment, it must be 
+\begin{enumerate}
+	\item Submitted online to Blackboard.  This is so we have an electronic ``paper trail'' for your assignment.
+	\item Demoed to the me or a TA.  Demoing your work involves showing that your program works, explaining pieces of your source code, and answering some questions.
+\end{enumerate}
+
+We accept your late work. 
+
+
+
+\subsection*{Late Policy}
+Late assignments will be accepted with a penalty, as described below.  $$grade = score \cdot 0.95^{l}$$
+Where $l$ is the number of days late.  While this looks a bit intimidating, this scheme does provide more points than just a straight deduction every day. \textbf{It is your responsibility to demo late work.  Work not demoed will receive a 0 at the end of the course.}
+
+Late grades are determined by when you turn it in, not when you demo it, but the sooner you demo, the sooner you can correct a possible mistake. 
+
+\subsubsection*{Example}
+Alice turns in an assignment that would have gotten an 100, but it's 5 days late.  Her grade is $$100\cdot 0.95^{5} = 77.38$$ A 77 isn't ideal, but it's within striking range of a B and a great deal more than 0.
+
+\section{Exams}
+Exams make up the majority of your grade.
+Practice exams may be provided and reviewed.  
+Please do not miss any exam.  
+Makeup exams will be given on a case by case basis.
+
+
+You can expect two exams and a final, with the first exam occurring during the week 5 lab and the second occurring at the week 10 lab.
+This is subject to change.
+Your final exam details can be found in the university calendar.
+
+Exams are open note, \textbf{except for the first 2168 exam.}
+
+\section*{Grading}
+
+Letter grades will be assigned at no higher than A$\geq$90, B$\geq$80, etc.
+In general, you need above a 70 to pass the class.
+There may be extra credit opportunities available in on exams and on assignments.
+I will not give out extra assignments or tests for you to make up your grade, but I usually drop a lab.
+Plus/minus grading will be used.
+\subsection*{Composition}
+Your final grade in the class will be the average of each item, weighted accordingly.
+
+\begin{tabular}{ l  r l}
+	Participation and Attendance & 5 \% & at most \\
+	Labs & 30 \% & at most \\
+	Exams & 65 \% & at least \\
+\end{tabular}
+
+\section*{Disclaimer}
+The syllabus is here to serve as a guide and may be subject to changes.  Up to date information, assignments, and class material can be found on online.
+
+This syllabus may be updated to reflect changes.
+
+
+\subsection*{Students and Faculty Academic Rights and Responsibilities}
+\href{http://policies.temple.edu/PDF/99.pdf}{Student and Faculty Academic Rights and Responsibilities} can be found in the link.
+
+
+\section*{Tips for Succeeding}
+\begin{itemize}
+	\item Don't be afraid to ask questions in class.  If you have a question, I guarantee another student has the same question.  
+	\item This goes doubly so for math.  If you don't understand or remember a concept when we bring it up \emph{let us know.}
+	\item Get into the habit of studying a couple of days early.
+	\item Do your homework.
+	\item Give yourself more time than you think you need.
+	\item Use a clear, easy-to-read, monospaced font while coding.
+	\item Do your homework.
+	\item Ask questions.  Take advantage of our office hours.
+	\item Do your homework.  In the previous classes I've taught, the vast majority of students who turned in all their homeworks managed to earn A's and B's, even when they had a bad day on a test.
+	\item Likewise, not turning in homeworks corresponds very strongly with failing.
+	\item Don't program in Notepad.  Get a real text editor.
+	\item Do your homework. Seriously.  It is nigh impossible to pass without doing your homework.
+	
+	
+\end{itemize}
+
+
+
+
+
+\end{document}
