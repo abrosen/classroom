@@ -6,9 +6,6 @@ public class Reptile extends Animal{
 		this.name = "Ralph";
 	}
 	
-
-	
-	
 	public Reptile(String name) {
 		super(name);
 	}

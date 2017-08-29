@@ -22,5 +22,7 @@ public class Animal {
 		System.out.println(name + " moved kinda normally.");
 	}
 	
-	
+	public static void main(String[] args) {
+		Animal a = new Animal();
+	}
 }
