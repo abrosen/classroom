@@ -5,6 +5,7 @@ public class SuperReview {
 	public static void main(String[] args) {
 		
 		long l;
+		
 		double d;
 		
 		boolean b;
