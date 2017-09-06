@@ -36,6 +36,19 @@ public class Circle extends Object {
 			System.out.println(c.getArea());
 		}
 		
+		Box<String> b =  new Box<String>();
+		Box<Integer> c = new Box<Integer>();
+		
+		Integer myInt = 5;
+		int x = myInt;
+		
+		c.item = 3;
+		
+		System.out.println(Integer.MAX_VALUE);
+		
+		
+		b.item = "thing";
+		b.setItem("other");
 		
 	}
 	
