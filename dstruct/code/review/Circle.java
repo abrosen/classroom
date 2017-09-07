@@ -23,10 +23,22 @@ public class Circle {
 
 	public static void main(String[] args) {
 		
+		
+		
 		List<Circle> list = new ArrayList<Circle>();
+		List any = new ArrayList();
 		List<String> l2 = new ArrayList<String>();
+	
 		List<List<Integer>> l3 = new ArrayList<List<Integer>>();
 
+		
+		
+		any.add( "hello");
+		
+		
+		String s =  (String) any.get(0);
+		System.out.println(s);
+		
 		
 		
 		for(int i = 0; i<1000; i++) {

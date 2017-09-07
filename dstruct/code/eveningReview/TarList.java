@@ -89,6 +89,7 @@ public class TarList<E> {
 		}
 		E oldItem   = list[index]; 
 		list[index]  = item;
+		
 		return oldItem;
 	}
 	
