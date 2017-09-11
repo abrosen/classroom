@@ -8,6 +8,7 @@ public class Loops {
 		for(int i = 0 ;  i < 15; i = i + 1) {
 			// do stuff
 			System.out.println("!");
+			
 		}
 	}
 
