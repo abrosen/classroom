@@ -1,3 +1,5 @@
+package eveningReview;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -7,7 +9,37 @@ import java.util.Set;
 
 public class BigO {
 	
+	
+	
 	public static Random random = new Random();
+	
+	
+	
+	public static void bubbleSort(List<Integer> list) {
+		for(int l = 0; l< list.size(); l++ ) {
+			for(int i = 0 ; i <list.size()- 1; i++) {
+				if(list.get(i) > list.get(i +1 ) ) {
+					int temp =  list.get(i);
+					list.set(i,  list.get(i+1));
+					list.set(i+1, temp);
+				}
+			}
+		}
+		
+	}
+	
+	
+	
+	public static long sum(List<Integer>  list) {
+		long sum = 0;
+		
+		for(int val : list) {
+			sum += val;
+		}
+		
+		return sum;
+	}
+	
 	
 	// Our first method for testing is a method that creates a new list
 	// specifically a new list of a specific size
@@ -48,6 +80,7 @@ public class BigO {
 	
 	public static boolean has(List<Integer> list, int target){
 		for(int val : list) {
+			
 			for(int i = 0; i < 200; i++){
 				System.out.print("");
 			}
@@ -67,10 +100,14 @@ public class BigO {
 	
 	public static boolean areUnique(List<Integer> list){
 		for(int i = 0 ; i < list.size() ; i++){
-			for(int j = i+1;  j < list.size(); j++){
+			for(int j = i+1;  j < list.size() - 1; j++){
+				
+				if(j == i ) {
+					continue;
+				}
 				
 				System.out.print("");
-				if(list.get(i) == list.get(j) ){
+				if(list.get(i).equals(list.get(j)) ){
 					return false;
 				}
 			}
@@ -84,6 +121,7 @@ public class BigO {
 	
 	public static boolean areUnique2(List<Integer> list){
 		Set<Integer> checklist = new HashSet<Integer>(); 
+		
 		for(int i = 0 ; i < list.size() ; i++){
 			System.out.print("");
 			if(checklist.contains(i)){  // O(1) for a HashSet
@@ -103,8 +141,16 @@ public class BigO {
 		long startTime, endTime;
 		int maxSize = 20000000;
 
-		
-		/*System.out.println("--Empty Check--------");	
+		/*
+		for(int i = 10 ; i <= maxSize; i*=2 ) {
+			startTime = System.currentTimeMillis();
+			sum( makeList(i));
+			
+			endTime = System.currentTimeMillis();
+			System.out.println("sum "+i+" \ttook " + (endTime -startTime)  +" milliseconds.");
+		}*/
+		/*
+		System.out.println("--Empty Check--------");	
 		for(int i = 10; i<= maxSize; i*=2){
 			List<Integer> list= makeList(i);
 			
@@ -115,7 +161,8 @@ public class BigO {
 			System.out.println("Size "+i+" \ttook " + (endTime -startTime)  +" milliseconds.");
 		}
 
-		
+		*/
+		/*
 		System.out.println("--Searching----------");
 		for(int i = 10; i<= maxSize; i*=2){
 			List<Integer> list= makeList(i);
@@ -125,21 +172,25 @@ public class BigO {
 			endTime = System.currentTimeMillis();
 			System.out.println("Size "+i+" \ttook " + (endTime -startTime) +" milliseconds.");
 		}*/
+		
+		/*
 		System.out.println("--Sorting------------");
 		for(int i = 10; i<= maxSize; i*=2){
 			List<Integer> list= makeList(i);
 			
 			
 			startTime = System.currentTimeMillis();
+			
+			//bubbleSort(list);
 			Collections.sort(list);
 			endTime = System.currentTimeMillis();
 			System.out.println("Size "+i+" \ttook " + (endTime -startTime) +" milliseconds.");
-		}
+		}*/
 		
 		
 		
 		
-		/*
+		
 		System.out.println("--Uniqueness---------");
 		for(int i = 10; i<= maxSize; i*=2){
 			List<Integer> list= makeList(i);
@@ -150,6 +201,6 @@ public class BigO {
 			endTime = System.currentTimeMillis();
 			System.out.println("Size "+i+" \ttook " + (endTime -startTime)+" milliseconds.");
 		}
-		*/
+		
 	}
 }
