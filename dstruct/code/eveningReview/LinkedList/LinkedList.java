@@ -28,6 +28,7 @@ public class LinkedList<E> {
 		if(index == 0) {
 			temp.next = head;
 			head  =  temp;
+			
 		}
 		
 		
