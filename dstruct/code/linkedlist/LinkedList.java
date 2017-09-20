@@ -42,6 +42,31 @@ public class LinkedList<E> {
 		size++;
 	}
 	
+	public E remove(int index) {
+		E retval = null;
+		//  out of bounds
+		if(index < 0 || index >= size) {
+			throw new ArrayIndexOutOfBoundsException(index);
+		}
+		
+		
+		
+		if(index == 0) { // removing the head
+			retval = head.item;
+			head = head.next;
+			
+		} else {
+			Node<E> node =  getNode(index -1);
+			retval = node.next.item;
+			node.next = node.next.next;
+		} // removing anywhere else
+		
+		
+	
+		size--;
+		return retval;
+	}
+	
 	private Node<E> getNode(int index){
 		if(index < 0 || index >= size) {
 			throw new ArrayIndexOutOfBoundsException(index);
@@ -53,6 +78,10 @@ public class LinkedList<E> {
 		}
 		return current;
 		
+	}
+	
+	public E get(int index) {
+		return getNode(index).item;
 	}
 	
 	
