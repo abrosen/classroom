@@ -27,7 +27,7 @@ public class DoubleLinkedList<E> {
 	public void add(int index, E item) {
 		
 		
-		// out of bounds
+		// out of bounds  X
 		if(index<0 || index > size) {
 			System.err.println("My hovercraft is full of eels!");
 			throw new ArrayIndexOutOfBoundsException(index);
@@ -39,7 +39,7 @@ public class DoubleLinkedList<E> {
 			head = temp;
 			tail = temp;
 			
-		} else if(index == 0) { // adding new head
+		} else if(index == 0) { // adding new head X
 			temp.next = head;
 			head.prev = temp;
 			head = temp;
@@ -47,7 +47,7 @@ public class DoubleLinkedList<E> {
 			temp.prev = tail;
 			tail.next = temp;
 			tail = temp;
-		} else {  // adding anywhere else!
+		} else {  // adding anywhere else! X
 			Node<E> node =  getNode(index -1);
 			temp.next = node.next;
 			temp.prev = node;
@@ -60,21 +60,49 @@ public class DoubleLinkedList<E> {
 	
 	
 	public E remove(int index) {
-		E retval = null;
+
+		E retval = null; // to store the value to return
+	
+	
+		// out of bounds X
+		if(index < 0 ||  index >= size) {
+			throw new ArrayIndexOutOfBoundsException(index);
+		}
 		
-		// out of bounds
 		
 		// removing would make list empty
+		else if(size == 1) {
+			retval = tail.item;
+			head = null;
+			tail = null;
+		} 
 		
-		
-		// removing the head
-		
-		
+			
+		// removing the head X 
+		else if(index == 0){
+
+			retval = head.item;
+			head = head.next;
+			head.prev = null;
+		}
+			
 		// removing the tail
+		else if(index == size -1 ) {
+			retval = tail.item;
+			tail = tail.prev;
+			tail.next= null;
+			
+		}
+			
+		// removing anywhere else X
+		else {
+			Node<E> node = getNode(index -1);
+			retval = node.next.item;
+			node.next.next.prev = node;
+			node.next = node.next.next;
+		}
 		
-		
-		// removing anywhere else
-		
+			
 		size--;
 		return retval;
 	}
