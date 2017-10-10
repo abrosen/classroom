@@ -73,11 +73,41 @@ public class Recursion {
 		}
 	}
 	
+	public static double gcd(int m, int n) {
+		if(m % n == 0 ) {
+			return n;
+		} else {
+			return gcd(n, m % n );
+		}
+	}
+	
+	public static <E extends Comparable<E>> int binarySearch(E[] array, E target ) {
+		return  binarySearch(array, target, 0, array.length -1 );
+	}
+	
+	private static <E extends Comparable<E>> int binarySearch(E[] array, E target, int first, int last) {
+		if( last < first ) {
+			return -1;
+		}
+		int middle = (first +last) / 2;
+		E middleItem = array[middle];
+		if(target.compareTo(middleItem) == 0) {
+			return middle;
+		} else if(target.compareTo(middleItem)  < 0) {
+			return binarySearch(array, target, first,  middle -1);
+		} else {
+			return binarySearch(array, target, middle + 1 ,  last);
+		}
+		
+	}
+	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//print("alice");
-		System.out.println(pow(2,-8));
+		Integer[] arr = {5,6,7,12,15,95,107};
+		
+//		//System.out.println(binarySearch(arr, "5"));
 		
 	}
 
