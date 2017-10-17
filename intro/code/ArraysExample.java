@@ -3,6 +3,19 @@ import java.util.Arrays;
 public class ArraysExample {
 
 	
+	public static int[] merge(int[] a, int[] b) {
+		int[] c = new int[a.length + b.length];
+		for(int i = 0; i< a.length;i++) {
+			c[i] = a[i];
+		}
+		for(int i = 0; i< b.length;i++) {
+			c[a.length + i]= b[i];
+		}
+		
+		
+		return c;
+	}
+	
 	
 	public static int sum(int[] array) {
 		int sum = 0;
@@ -57,9 +70,6 @@ public class ArraysExample {
 		
 		double[] nums = new double[10];
 		
-		int x = array[3];
-		System.out.println(x);
-		array[1] = x + 1;
 		
 		System.out.println(Arrays.toString(array));
 		
@@ -69,6 +79,10 @@ public class ArraysExample {
 		}
 		
 		System.out.println(Arrays.toString(nums));
+		
+		int[] x = {1,2,3,4,5,6};
+		int[] y = {100,200,300,12};
+		System.out.println(Arrays.toString(merge(x,y)) );
 	
 	}
 

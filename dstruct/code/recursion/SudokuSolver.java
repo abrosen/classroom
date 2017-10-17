@@ -47,11 +47,13 @@ public class SudokuSolver {
 		// TODO Auto-generated method stub
 		int rowCorner = row /3 * 3;
 		int colCorner = col /3 * 3;
-		
-		
-		
-		
-		
+		for(int i=0; i< 3;i++) {
+			for(int j =0; j<3; j++) {
+				if(puzzle[rowCorner+i][colCorner+j] == val) {
+					return false;
+				}
+			}
+		}
 		
 		return true;
 	}
