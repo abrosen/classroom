@@ -9,4 +9,8 @@ public class Node<E> {
 	public Node(E item){
 		this.item = item;
 	}
+	
+	public String toString() {
+		return item.toString();
+	}
 }
