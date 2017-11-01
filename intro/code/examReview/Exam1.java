@@ -2,6 +2,8 @@ package examReview;
 
 import java.util.Scanner;
 
+import oop.Factors;
+
 public class Exam1 {
 
 	public static String eachChar(String str) {
@@ -55,6 +57,9 @@ public class Exam1 {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		Factors.isPrime(100);
+		
 		printFactors(100);
 		print2Powers(6);
 		System.out.println(countDigits(1));
