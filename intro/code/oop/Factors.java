@@ -1,5 +1,7 @@
 package oop;
 
+import classroom.Animal;
+
 public class Factors {
 
 	
