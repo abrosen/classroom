@@ -49,6 +49,7 @@ public class Lizard extends Reptile {
 		for(Animal animal : zoo) {
 			animal.move();
 			animal.eat("some grub");
+//			/((Reptile) animal).warm();
 		}
 		
 		
