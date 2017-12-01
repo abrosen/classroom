@@ -133,6 +133,7 @@ public class SudokuSolver {
 		for(int[] row : puzzle) {
 			System.out.println(Arrays.toString(row));
 		}
+
 	}
 
 }
