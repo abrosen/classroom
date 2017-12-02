@@ -15,6 +15,9 @@ public class Box<E> {
 		Box<String> s = new Box<String>();
 		Box o = new Box();
 		
+		
+		
+		System.out.println(-0.0/0);
 	}
 	
 	

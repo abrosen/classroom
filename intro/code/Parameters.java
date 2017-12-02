@@ -31,8 +31,7 @@ public class Parameters {
 	}
 	
 	public static void main(String[] args) {
-		box(50,40);
-		
+		System.out.println( MathExample.add(5, 10) );
 	}
 
 }

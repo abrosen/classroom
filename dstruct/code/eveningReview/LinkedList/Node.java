@@ -8,6 +8,7 @@ public class Node<E> {
 	public Node(E item) {
 		this.item = item;
 		this.next = null;
+		
 	}
 	
 }
