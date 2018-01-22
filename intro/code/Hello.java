@@ -1,13 +1,12 @@
 
-public class Hello {
+public class Hello {  // creates a program called Hello, stored in Hello.java
 	
-	public static int add(int a , int b) {
-		return a +b;
-	}
-	
-	public static void main(String[] args) {
-		System.out.println("Hello, World!");
-		System.out.println("Foobar.");
-		System.out.println(add(5,2));
+	public static void main(String[] args) {  // The main method
+		
+		// Timmy went out of his house and went to the 
+	    // the store for bread.
+		System.out.println("Juliet: \n\t\"Romeo, Romeo, wherefore art thou Romeo\"?");
+		
+		System.out.println("\\\n\\");  // a print statement
 	}
 }

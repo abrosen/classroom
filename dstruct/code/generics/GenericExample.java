@@ -24,6 +24,9 @@ public class GenericExample {
 	
 	
 	
+	
+	
+	
 	public static void main(String[] args) {
 		
 		ArrayList<Integer>  intList = new ArrayList<Integer>();
