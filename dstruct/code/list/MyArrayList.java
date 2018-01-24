@@ -17,6 +17,13 @@ public class MyArrayList<E> {
 		this.capacity =  INITIAL_CAPACITY;
 	}
 	
+	public MyArrayList(int capacity) {
+		this.size = 0;
+		this.data = (E[]) new Object[capacity];
+		this.capacity =  capacity;
+	}
+		
+		
 	public int size() {
 		return this.size;
 	}
@@ -67,6 +74,10 @@ public class MyArrayList<E> {
 		}
 	
 		// what about the other indexes
+		for(int i = size -1 ;  i >= index; i--) {
+			data[i+1]= data[i];  
+		}
+		
 		
 		data[index] = item;
 		
@@ -74,18 +85,37 @@ public class MyArrayList<E> {
 	}
 	
 
+	public E remove(int index) { 
+		if(index < 0 || index >=size) {
+			throw new ArrayIndexOutOfBoundsException();
+		}
+		
+		E oldItem = data[index];
+		for(int i = index; i < size -1 ; i++) {
+			data[i] = data[i +1];
+		}
+		
+		size--;
+		return oldItem;
+	}
+	
+	
+
 	public boolean contains(E item) {
-		return false;
+		int indexOfItem = this.indexOf(item);
+		return indexOfItem != -1;
 	}
 	
 	public int indexOf(E item) {
+		for(int i = 0; i<size; i++) {
+			E storedItem = data[i];
+			if(storedItem.equals(item)) {
+				return i;
+			}
+		}
 		return -1;
-		
 	}
 	
-	public E remove(int index) { 
-		return null;
-	}
 	
 	
 	private void reallocate() { //doubles the capacity
@@ -117,9 +147,14 @@ public class MyArrayList<E> {
 		MyArrayList<String> list = new MyArrayList<String>();
 		
 		for(int i = 0; i< 1000; i++) {
-			list.add(0 ,i + "");
-			System.out.println(list);
+			list.add(i + "");
+			
 		}
+		for(int i = 0; i< 100; i++) {
+			System.out.println(list.remove(100));
+			
+		}
+		System.out.println(list);
 	}
 
 }
