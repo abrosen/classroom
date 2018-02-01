@@ -14,11 +14,11 @@ public class MyArrayList<E> {
 		this.data = (E[]) new Object[INITIAL_CAPACITY];
 	}
 	
-	public int size() {
+	public int size() {  // O(1)
 		return this.size;
 	}
 	
-	public boolean isEmpty() {
+	public boolean isEmpty() {  //O(1)
 		return this.size == 0;
 	}
 	
@@ -33,11 +33,11 @@ public class MyArrayList<E> {
 			throw new ArrayIndexOutOfBoundsException("ur an idiot.");
 		}
 
-		if(size == capacity) {
+		if(size == capacity) {  //  O(n)
 			reallocate();
 		}
 		
-		for(int i = this.size -1;  i >= index ; i--) {
+		for(int i = this.size -1;  i >= index ; i--) { // O(n)
 			data[i+1] = data[i];
 		}
 		
@@ -47,7 +47,7 @@ public class MyArrayList<E> {
 		size++;
 	}
 	
-	private void reallocate() {
+	private void reallocate() {  //O(n)
 		this.capacity *= 2;
 		E[] oldData = this.data;
 		this.data = (E[]) new Object[capacity];
@@ -57,15 +57,15 @@ public class MyArrayList<E> {
 		
 	}
 
-	public E get(int index) {
-		if(index <0 || index >= size) {
+	public E get(int index) {  //O(1_
+		if(index < 0 || index >= size) {
 			throw new ArrayIndexOutOfBoundsException();
 		}
 	
 		return data[index];
 	}
 	
-	public E set(int index,  E newItem ) {
+	public E set(int index,  E newItem ) {  //  O(1)
 		if(index <0 || index >= size) {
 			throw new ArrayIndexOutOfBoundsException();
 		}
@@ -75,7 +75,7 @@ public class MyArrayList<E> {
 		return oldItem;
 	}
 	
-	public E remove(int index) {
+	public E remove(int index) {  // O(n)
 		if(index < 0 ||index >= size) {
 			throw new ArrayIndexOutOfBoundsException();
 		}

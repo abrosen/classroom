@@ -79,6 +79,17 @@ public class DrawExample {
 		drawTop();
 		drawDivider();
 		drawXTube();
+		drawXTube();
+		drawXTube();
+		drawXTube();
+		drawXTube();
+		drawXTube();
+		drawXTube();
+		drawXTube();
+		drawXTube();
+		drawXTube();
+		drawXTube();
+		drawXTube();
 		drawDivider();
 		drawDiamondTube();
 		drawDivider();

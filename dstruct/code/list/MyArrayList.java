@@ -74,7 +74,7 @@ public class MyArrayList<E> {
 		}
 	
 		// what about the other indexes
-		for(int i = size -1 ;  i >= index; i--) {
+		for(int i = size -1 ;  i >= index; i--) {  //O(n)
 			data[i+1]= data[i];  
 		}
 		
@@ -118,7 +118,7 @@ public class MyArrayList<E> {
 	
 	
 	
-	private void reallocate() { //doubles the capacity
+	private void reallocate() { //doubles the capacity  //O(n)
 		E[] oldData = data;
 		this.capacity *= 2;
 		data = (E[]) new Object[capacity];

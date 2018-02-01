@@ -1,6 +1,7 @@
 package bigoEvening;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class BigOExamples {
 
@@ -16,8 +17,32 @@ public class BigOExamples {
 		
 	}
 	
+	
+	public static <T extends Comparable<T>> void bubbleSort(ArrayList<T> list) {
+		
+		for(int count = 0; count < list.size(); count++) {  // n 
+			
+			for(int i = 0; i < list.size() - (1 + count);  i++) { // n - 1
+				T left  = list.get(i);
+				T right = list.get(i+1);
+				if(left.compareTo(right) > 0) {
+					list.set(i, right);
+					list.set(i+1, left);
+				}
+			}
+		}
+		
+	}
+	
+	
 	public static <T> int search(ArrayList<T> list, T item) {
-		for(int i = 0; i<list.size(); i++) {
+		for(int i = 0; i< list.size(); i++) {
+			
+			
+			for(int j = 0; j<1000; j++ ) {
+				System.out.print("");
+			}
+			
 			if(item.equals(list.get(i))) {
 				return i;
 			}
@@ -25,6 +50,8 @@ public class BigOExamples {
 		
 		return -1;
 	}
+	
+	
 	
 	
 	public static void testConstant() {
@@ -44,14 +71,21 @@ public class BigOExamples {
 
 		//testConstant();
 		ArrayList<Integer> list = new ArrayList<Integer>();
-		for(int i = 0; i< 50000000; i++) {
-			list.add(i);
+		Random random = new Random();
+		for(int i = 0; i<10000; i++) {
+			list.add(random.nextInt());
 		}
 		
 		long start = System.currentTimeMillis();
-		search(list, -13);
+		bubbleSort(list);
 		long end= System.currentTimeMillis();
 		System.out.println(end - start);
+	
+		
+		
+		
+		
+		
 		
 	}
 
