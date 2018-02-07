@@ -2,11 +2,17 @@ package linkedListEvening;
 
 public class LinkedListEvening<E> {
 	private Node<E> head;
+	private Node<E> tail;
 	private int size;
 	
 	public LinkedListEvening() {
 		this.head = null;
 		this.size = 0;
+	}
+	
+	public boolean add(E item) {
+		this.add(size, item);
+		return true;
 	}
 	
 	
@@ -15,21 +21,47 @@ public class LinkedListEvening<E> {
 			throw new IndexOutOfBoundsException();
 		}
 		
-		Node<E> temp = new Node<E>(item);
+		Node<E> adding = new Node<E>(item);
 		
 		if(index == 0) {  // adding new first thing
-			temp.next = head;
-			head = temp;
+			adding.next = head;
+			head = adding;
 			
 		} else {  // adding anywhere else
 			Node<E> before= getNode(index - 1);
 			//Node<E> after = before.next;
-			temp.next = before.next;
-			before.next = temp;
+			adding.next = before.next;
+			before.next = adding;
 		}
 		
 		size++;
 	}
+	
+	
+	public E remove(int index) { 
+		E toReturn = null;
+		if(index < 0 || index >= size) {
+			throw new IndexOutOfBoundsException();
+		}
+		
+		
+		
+		if(index == 0) {
+			toReturn  = head.item;
+			head = head.next;
+		} else {
+			Node<E> before = getNode(index - 1);
+			//Node<E> toRemove = before.next;
+			toReturn = before.next.item;
+			before.next = before.next.next;
+			
+			
+		}
+		
+		size--;
+		return toReturn;
+	}
+	
 	
 	public String toString() {
 		StringBuilder output = new StringBuilder();
@@ -76,7 +108,9 @@ public class LinkedListEvening<E> {
 		list.add(0, 1);
 		list.add(0, 0);
 		list.add(0, -12);
-		list.add(0, 5);
+		list.add( 5);
+		list.remove(0);
+		list.remove(1);
 		
 		
 		System.out.println(list);

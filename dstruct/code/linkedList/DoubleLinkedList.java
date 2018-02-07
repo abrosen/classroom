@@ -1,74 +1,88 @@
 package linkedList;
 
-public class LinkedList<E> {
-	
+
+public class DoubleLinkedList<E> {
 	private Node<E> head;
 	private Node<E> tail;
 	private int size;
 	
-	
-	public LinkedList() {
+	public DoubleLinkedList() {
 		head = null;
 		tail = null;
-		size = 0; 
+		size = 0;
 	}
 	
 	public boolean add(E item) {
-		this.add(size, item); 
+		this.add(size, item);
 		return true;
 	}
 	
 	
+	
 	public void add(int index, E item) {
+		// Out of bounds 
 		if(index < 0 || index > size) {
 			throw new IndexOutOfBoundsException();
 		}
 		
-		Node<E> adding = new Node<E>(item);
+		Node<E> adding = new Node<E>(item); 
 		
+		// adding first item to empty list
 		if(size == 0) {
-			head = adding;
-			tail = adding;
+			this.head = adding;
+			this.tail = adding;
 		}
-		else if(index == 0) {
+		else if(index == 0) { // adding new head
 			adding.next = head;
+			head.prev = adding;
 			head = adding;
-		
-		} else if( index == size) {
-			tail.next = adding;
+			
+		}
+		else if(index == size) { // adding new tail
+			adding.prev = tail;
+			tail.next =  adding;
 			tail = adding;
 		}
-		else {
-			Node<E> before = getNode(index - 1);
+		else {// everything else
+			Node<E> before  = this.getNode(index - 1);
 			adding.next = before.next;
+			adding.prev = before;
+			before.next.prev =  adding;
 			before.next = adding;
 		}
-		
 		size++;
 	}
 
-	//finishing with tail left to students
+	
 	public E remove(int index) {
-		if(index < 0 || index >= size) {
+		E toReturn = null;
+		if(index < 0  || index  >=size) {
 			throw new IndexOutOfBoundsException();
 		}
-		E toReturn = null;
 		
-		if(index == 0) {
-			toReturn = this.head.item;
-			// Node<E> nextNode = head.next;
+		
+		if(size == 1) {
+			toReturn = head.item;
+			head = null;
+			tail = null;
+		} else if(index == 0) {
+			toReturn = head.item;
 			head = head.next;
-			
+			head.prev = null;
+		} else if(index == size -1) {
+			toReturn = tail.item;
+			tail = tail.prev;
+			tail.next = null;
 		} else {
-			Node<E> before = getNode(index -1);
-			toReturn =  before.next.item;
-			before.next = before.next.next;
 			
 		}
+		
 		
 		size--;
 		return toReturn;
 	}
+	
+	
 	
 	private Node<E> getNode(int index) {
 		if(index < 0 || index >= size) {
@@ -102,35 +116,26 @@ public class LinkedList<E> {
 	}
 	
 	
-	public static void main(String[] args) {
-		LinkedList<Integer> l = new LinkedList<Integer>() ;
-		l.add(0, 5);
-		for(int i = 4; i >=0; i-- ) {
-			l.add(i);
-		}
-		System.out.println(l);
-		l.remove(0);
-		l.remove(2);
-		
-		System.out.println(l);
-		
-	}
-
+	
 	private static class Node<E> {
 		private E item;
-		private Node<E> next;
-		
+		Node<E>   next;
+		Node<E>   prev;
 		
 		public Node(E item) {
 			this.item = item;
 		}
+		
+	}
+	
+	public static void main(String[] args) {
+		DoubleLinkedList<Integer> l  = new DoubleLinkedList<Integer>();
+		l.add(1);
+		l.add(0,0);
+		l.add(2,3);
+		l.add(2,2);
+		System.out.println(l);
+		
 	}
 	
 }
-
-
-
-
-
-
-
