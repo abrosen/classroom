@@ -99,7 +99,19 @@ public class DoubleLinkedList<E> {
 	}
 	
 	
+	public E get(int index) {
+		//Node<E> targetNode = getNode(index);
+		return getNode(index).item;
+	}
 	
+	
+	public E set(int index, E newItem) {
+		E oldItem = null;
+		Node<E> targetNode = getNode(index);
+		oldItem = targetNode.item;
+		targetNode.item  =newItem;
+		return oldItem;
+	}
 	
 	public String toString() {
 		StringBuilder output=  new StringBuilder();
@@ -114,6 +126,9 @@ public class DoubleLinkedList<E> {
 		output.append(current.item  + "]");
 		return output.toString();
 	}
+	
+	
+	
 	
 	
 	
