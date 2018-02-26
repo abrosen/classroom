@@ -45,7 +45,7 @@ public class SudokuSolver {
 			}
 		}
 
-		board[row][col]= 0;
+		board[row][col] = 0;
 		return false; // backtrack;
 
 
