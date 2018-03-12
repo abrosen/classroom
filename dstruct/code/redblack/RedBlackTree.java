@@ -148,7 +148,7 @@ public class RedBlackTree<E extends Comparable<? super E>> {
 
 	}
 
-	private static  class  Node<E>{
+	private static  class Node<E>{
 		private boolean isBlack;
 		private Node<E> left;
 		private Node<E> right;

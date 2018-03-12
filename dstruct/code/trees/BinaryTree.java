@@ -115,8 +115,11 @@ public class BinaryTree<E extends Comparable<E>> {
 
 
     public String toString() {
-        return toString(this.root);
+        StringBuilder sb = new StringBuilder();
+        preOrderTraverse(root, 1, sb);
+        return sb.toString();
     }
+
 
     private String toString(Node<E> root) {
         if (root == null) {
@@ -133,6 +136,22 @@ public class BinaryTree<E extends Comparable<E>> {
     }
 
 
+
+
+    private void preOrderTraverse(Node<E> root, int depth, StringBuilder sb) {
+        for (int i = 1; i < depth; i++) {
+            sb.append("  "); // indentation
+        }
+        if (root == null) {
+            sb.append("null\n");
+        } else {
+            sb.append(root.toString());
+            sb.append("\n");
+            preOrderTraverse(root.left, depth + 1, sb);
+            preOrderTraverse(root.right, depth + 1, sb);
+        }
+    }
+
     private static class Node<E extends Comparable<E>> {
         private E item;
         private Node<E> left;  // left child
@@ -140,6 +159,11 @@ public class BinaryTree<E extends Comparable<E>> {
 
         public Node(E item) {
             this.item = item;
+        }
+
+
+        public String toString() {
+            return item.toString();
         }
     }
 
