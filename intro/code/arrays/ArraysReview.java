@@ -68,11 +68,13 @@ public class ArraysReview {
 
 
     public static void main(String[] args) {
-        int[] arr= {0,1,2,3};
+        char c =  2932;
+        System.out.println(c);
+        /*int[] arr= {0,1,2,3};
         System.out.println("Arr in main " + arr);
         reverse(arr);
         System.out.println("Arr in main " + Arrays.toString(arr));
-
+        */
        /* String word  =  "hello!";
         char[] letters =  word.toCharArray();
         System.out.println(Arrays.toString(letters));

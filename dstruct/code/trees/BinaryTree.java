@@ -2,22 +2,38 @@ package trees;
 
 public class BinaryTree<E extends Comparable<E>> {
     private Node<E> root;
-    private int size;
+    //private int size;
 
     public BinaryTree() {
         this.root = null;
-        this.size = 0;
+        //this.size = 0;
     }
 
     public int size() {
-        return this.size;
+
+        return this.size(this.root);
     }
+
+
+    private int size(Node<E> root) {
+        if(root == null) {
+            return 0;
+        }
+
+        //int mySize = 1;
+       //int leftSize = size(root.left);
+        //int rightSize = size(root.right);
+        return 1 + size(root.left)+ size(root.right);
+    }
+
 
 
     public void add(E item) {
         this.root = add(this.root, item);
 
     }
+
+
 
 
     private Node<E> add(Node<E> root, E item) {
