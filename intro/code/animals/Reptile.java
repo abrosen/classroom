@@ -11,6 +11,7 @@ public class Reptile extends Animal{
 
     public Reptile(String name){
         this.name= name;
+        this.color = Color.GREEN;
     }
 
     public void eat(String thing){

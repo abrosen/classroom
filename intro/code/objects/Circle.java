@@ -2,7 +2,7 @@ package objects;
 
 
 // class
-public class Circle {
+public class Circle implements Shape {
 
     private double radius;
     private int x;
@@ -30,6 +30,11 @@ public class Circle {
 
     public double getCircumfrence(){
         return  2* PI * radius;
+    }
+
+
+    public double getPerimeter(){
+        return getCircumfrence();
     }
 
     public double getArea(){
