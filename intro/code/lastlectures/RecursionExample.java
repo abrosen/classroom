@@ -43,11 +43,72 @@ public class RecursionExample {
 
 
 
+    // x^n =  x*x*x*x...*x*x
+    // 2^5 = 32 = 2*2*2*2*2  = 2 * 2^4
+    // 2^4 = 16 = 2*2*2*2    = 2 * 2^3
+    // 2^3 = 8  = 2*2*2      = 2 * 2^2
+    // x^n  =  x * x^(n-1) if n >0
+    // x^n  =  1/x^(-n)            if n < 0
+    //      = 1            if n == 0
+
+    public static double pow(int base, int exp) {
+        if(exp == 0) {
+            return 1;
+        } if( exp < 0) {
+            return 1 /  pow(base, -1*exp);
+        }
+        else {
+            return base * pow(base, exp - 1);
+        }
+    }
+
+    /*  big   small   big% small
+        15     8        7
+        8      7        1
+        7      1
+
+    */
+    public static int gcd(int big, int small){
+        if(big % small == 0) {
+            return small;
+        } else {
+            return gcd(small, big % small);
+        }
+    }
+
+
+
+
+    public static int search(int[] arr,  int target){
+        return search(arr, target, 0, arr.length -1);
+    }
+
+    private static int search(int[] arr, int target, int first,int last) {
+        if(last < first) {
+            return -1;
+        }
+        else{
+            int middle = (first + last)/ 2;
+            int middleValue = arr[middle];
+            if(target == middleValue){
+                return middle;
+            }
+
+            if( target < middleValue) {
+                return search(arr , target, first, middle -1);
+            } else {
+                return search(arr, target, middle +1, last);
+            }
+
+
+        }
+    }
+
 
 
     public static void main(String[] args) {
-
         int[] arr =  {1,3,4,5,6,7,9,52,100};
-        System.out.println(fact(20));
+        //System.out.println(fact(20));
+        //System.out.println(gcd(101,11));
     }
 }
