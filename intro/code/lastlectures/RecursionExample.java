@@ -1,6 +1,7 @@
 package lastlectures;
 
 import java.sql.SQLOutput;
+import java.util.Arrays;
 
 public class RecursionExample {
 
@@ -105,10 +106,21 @@ public class RecursionExample {
     }
 
 
+    public static void fargo(float[][]  someArray) {
+        int[] array = new int[5];
+        for(int i = 0; i < array.length; i++) {
+            array[i]  = i;
+        }
+        int index = 0;
+        array[index] = 1;
+        index = array[array[index] + 1];
+        array[index]  = array[array[index] -1];
+        array[array.length -1 ] = 2;
+        System.out.println(Arrays.toString(array));
+    }
+
 
     public static void main(String[] args) {
-        int[] arr =  {1,3,4,5,6,7,9,52,100};
-        //System.out.println(fact(20));
-        //System.out.println(gcd(101,11));
+        //fargo();
     }
 }
