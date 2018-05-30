@@ -7,6 +7,8 @@ public class BMR {
         Scanner kb = new Scanner(System.in);
 
 
+
+
         // get age
         System.out.println("Please enter your age:");
         int age = kb.nextInt();
