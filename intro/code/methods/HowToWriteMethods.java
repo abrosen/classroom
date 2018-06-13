@@ -5,4 +5,6 @@ public class HowToWriteMethods {
     public static void thisIsAMethodThatPrints(){
 
     }
+
+
 }
