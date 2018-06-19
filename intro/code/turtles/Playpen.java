@@ -53,6 +53,28 @@ public class Playpen {
     }
 
 
+    public static void drawSquaredSquares(Turtle t) {
+
+        for (int i = 1; i <= 4; i++) {
+            t.penUp();
+            t.goTo(i*-30,i*-30);
+            t.penDown();
+            for (int j = 0; j < 4; j++) {
+                t.forward(i*60);
+                t.turnLeft(90);
+            }
+
+
+        }
+    }
+
+
+    public static void drawMulticolorSpiral(Turtle t, int step) {
+
+
+
+    }
+
 
     public static void drawSquareSpiral(Turtle t, int step) {
         for (int i = 0; i < 50; i++) {
@@ -70,9 +92,10 @@ public class Playpen {
         Turtle alice = new Turtle(w);
         alice.setColor(Color.GREEN);
 
-        drawSquareSpiral(leo,10);
-        drawSquareSpiral(alice,2);
+        //drawSquareSpiral(leo,10);
+       // drawSquareSpiral(alice,2);
 
+        drawSquaredSquares(leo);
         //weird(leo);
         //drawPolygon(alice,12,50);
         //drawStar(leo);
