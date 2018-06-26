@@ -1,5 +1,10 @@
 import turtle 
 
+"""
+This program creates a
+sorta stitch like pattern
+"""
+
 seurat = turtle.Turtle()
 seurat.shape("turtle")
 

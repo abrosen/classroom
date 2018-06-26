@@ -4,9 +4,22 @@ import java.util.Arrays;
 
 public class HowToArray {
 
+
+    //default array values
+
+    public static double[] giveMeDoubles(){
+        double[] numbers =  new double[100];
+        return numbers;
+    }
+
     //aliasing
 
 
+
+    public static int[] giveMeInts() {
+        int[] nums = new int[100];
+        return  nums;
+    }
 
     public static int sum(int[] nums){
         int sum = 0;
@@ -19,6 +32,7 @@ public class HowToArray {
     }
 
     public static double average(int[] nums){
+
         return sum(nums)*1.0/nums.length;
     }
 
@@ -37,7 +51,9 @@ public class HowToArray {
         int[] arr = {3,50,-7,2,4};
 
         System.out.println(arr[2]);
+
         x = arr[3];
+
         System.out.println(x);
 
         // change contents
@@ -51,6 +67,7 @@ public class HowToArray {
         //arr[12] = 6000;
 
         //iterating
+
         String[] words = new String[7];
         words[0] = "a";
         words[1] = "b";
@@ -81,15 +98,27 @@ public class HowToArray {
 
 
 
+        // passing into methods
+        int[] someNumbers = {7,2,5,1,4};
+        //System.out.println(sum(someNumbers));
+        //System.out.println(average(someNumbers));
 
+        double[] fromTheMethod = giveMeDoubles();
+        int[] fromTheOtherMethod = giveMeInts();
+        System.out.println(Arrays.toString(fromTheMethod));
+        System.out.println(Arrays.toString(fromTheOtherMethod));
+
+        boolean[] lots = new boolean[100];
+        System.out.println(Arrays.toString(lots));
         //aliasing
 
-        int[] someNumbers = {7,2,5,1,4};
-        System.out.println(sum(someNumbers));
-        System.out.println(average(someNumbers));
+
+
 
 
         //strings to Char Arrays
 
     }
+
+
 }
