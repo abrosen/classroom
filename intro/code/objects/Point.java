@@ -4,15 +4,30 @@ public class Point {
 
     // Attributes
     // What the object has
-    double x;
-    double y;
+    private int x;
+    private int y;
 
     // Constructors
     // How to build an object
-    public Point(int initX, int initY) {
-        x = initX;
-        y = initY;
+    public Point() {
+        this(0,0);
     }
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+
+    public int getY() {
+        return y;
+    }
+
+    public int getX(){
+        return this.x;
+
+    }
+
 
 
     //Behaviors
