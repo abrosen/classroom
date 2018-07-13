@@ -1,4 +1,4 @@
-package inheritence;
+package inheritance;
 
 public interface Shape {
 

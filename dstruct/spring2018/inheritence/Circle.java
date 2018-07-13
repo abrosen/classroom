@@ -1,4 +1,4 @@
-package inheritence;
+package inheritance;
 
 public class Circle implements Shape {
 	

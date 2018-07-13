@@ -1,4 +1,4 @@
-package inheritence;
+package inheritance;
 
 public class Lizard extends Reptile {
 
