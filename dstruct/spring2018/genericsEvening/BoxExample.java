@@ -6,6 +6,7 @@ public class BoxExample {
 		Box<String> b = new Box<String>();
 		b.setO("5.0");
 		String s = b.getO();
+		System.out.println("hello");
 
 	}
 
