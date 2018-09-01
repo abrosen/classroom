@@ -10,5 +10,6 @@ public class ForEachExample {
             sum += value;
         }
         System.out.println(sum);
+
     }
 }
