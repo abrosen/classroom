@@ -13,7 +13,7 @@ public class MyArrayList<E> {
     }
 
 
-    public int size() {
+    public int size() {  // O(1)
         return size;
     }
 
@@ -33,11 +33,11 @@ public class MyArrayList<E> {
             throw new IndexOutOfBoundsException("Index " +index+ " was out of bounds. What are you doing???");
         }
 
-        if(size == capacity) {
+        if(size == capacity) {  // O(n) time...sometimes.  Amortized over the cost of adding
             this.reallocate();
         }
 
-        for(int i = size - 1; i >= index; i--) {
+        for(int i = size - 1; i >= index; i--) { //If adding to the end... constant
             E temp = theData[i];
             theData[i+1] = temp;
         }
@@ -49,7 +49,7 @@ public class MyArrayList<E> {
     private void reallocate(){
         //doubles or 1.5x capacity
         //don't do +1 capacity
-        E[] newData = (E[]) new Object[capacity*2];
+        E[] newData = (E[]) new Object[capacity];
         for(int i = 0; i < theData.length; i++) {
             newData[i] =  theData[i];
         }
@@ -67,7 +67,7 @@ public class MyArrayList<E> {
         }
         E item =  theData[index];
 
-        for(int i = index  + 1; i < size; i++) {
+        for(int i = index  + 1; i < size; i++) {  //O(n), unless we remove last item in the list
             theData[i-1] =  theData[i];
         }
 

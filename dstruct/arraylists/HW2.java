@@ -4,30 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HW2 {
-
-    public static <E>  boolean in( List<E> list, E item ){
-        for(E element : list) {
-            if(item.equals(element)){
+    public static <T> boolean in(List<T> list, T item) {
+        for (T thing : list) {
+            if (thing.equals(item)) {
                 return true;
             }
         }
+
         return false;
     }
 
-
-    public static int sum(List<Integer> list){
+    public static int sum(List<Integer> list) {
         return -1;
     }
 
+    public static List<Integer> makeMeAList() {
 
-    public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            list.add(i);
-        }
-        boolean b = in(list, 4);
-        sum(list);
-
+        return new ArrayList<Integer>();
     }
 
 }
