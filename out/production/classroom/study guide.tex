@@ -1,0 +1,103 @@
+\documentclass[]{article}
+\usepackage{hyperref}
+%opening
+\title{Data Structures Study Guide}
+\author{Professor Andrew Rosen}
+
+\begin{document}
+
+\maketitle
+
+Programming Topics
+\begin{itemize}
+	\item Big O notation
+	\item Recursion (especially related to trees)
+	\item Sorting
+	\begin{itemize}
+		\item Insertion Sort
+		\item Quicksort and partition
+		\item Merge Sort
+	\end{itemize}
+	\item Huffman Encoding
+\end{itemize}
+
+
+
+Data Structures
+For the exam, you will not write any data structures, but you need to know how to write code that uses them.
+\begin{itemize}
+	\item Lists
+	\begin{itemize}
+		\item Types:
+		\begin{itemize}
+			\item ArrayList
+			\item LinkedList
+		\end{itemize}
+		\item Big O for \texttt{add, remove, get, set} differs based on type.
+	\end{itemize}
+	\item Stacks
+	\item Queues
+	\item Trees
+	\begin{itemize}
+		\item Tree vs Binary Tree vs Binary Search Tree
+		\item Tree algorithms are recursive and are either \texttt{find}-based or \texttt{traversal}-based.
+	\end{itemize}
+	\item Heap
+	\begin{itemize}
+		\item Always a complete tree
+		\item How to turn array into heap in $ O(n) $ time.
+	\end{itemize}
+	\item Hash Tables
+	\begin{itemize}
+		\item They build:
+		\begin{itemize}
+			\item Sets
+			\item Maps
+		\end{itemize}
+		\item Hashing 
+		\begin{itemize}
+			\item \texttt{.hashCode()} to generate a unique key
+			\item \texttt{\% table.length} to find a place to put it.
+			\item Two keys can end up directed to the same index on the table, causing a \emph{collision}.
+		\end{itemize}
+		\item Resolving Collisions
+		\begin{itemize}
+			\item Open addressing - probe for an empty spot, grab the first one we find
+			\begin{itemize}
+				\item Linear probing - if we have a collision at $ index $, look at $ index+1 $, then $ index + 2 $, and so on until we hit an empty spot.  
+				\item Quadratic probing - if we have a collision at $ index $, look at $ index+1^{2} $, then $ index + 2^{2} $, and so on until we hit an empty spot.  
+			\end{itemize}
+			\item Chaining -  Each slot in the table is actually a Linked List.  When we have a collision, we just add to the end that index's linked list.
+		\end{itemize}
+	\end{itemize}
+	\item Graphs
+
+	\begin{itemize}
+		\item Representations:
+		\begin{itemize}
+			\item Adjacency List
+			\item Adjacency Matrix 
+		\end{itemize}
+		\item Traversal and Path algorithms 
+		\begin{itemize}
+			\item BFS
+			\item DFS
+			\item Dijkstra's 
+		\end{itemize}
+
+	\end{itemize}
+\end{itemize}
+
+\section{Example Finals From Other Institutions}
+Some of these cover material not applicable to our class.
+
+\href{http://www-bcf.usc.edu/~stejada/csci102/slides/final/f11-final.pdf}{Link}
+
+\href{https://www.it.uu.se/edu/course/homepage/algdstr1/ht11/ex_tenta.pdf}{Another}
+
+
+\href{https://sites.fas.harvard.edu/~cscie119/sections/practice_final.pdf}{Yet another}
+
+\href{https://courses.cs.washington.edu/courses/cse373/07wi/exams/final.pdf}{One more}
+
+\end{document}
