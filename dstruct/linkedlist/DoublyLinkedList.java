@@ -1,5 +1,7 @@
 package linkedlist;
 
+import java.util.Collections;
+
 public class DoublyLinkedList<E> {
     private Node<E> head;
     private Node<E> tail;
@@ -11,7 +13,60 @@ public class DoublyLinkedList<E> {
         this.size = 0;
     }
 
+    public int size(){
+        return size;
+    }
 
+
+    public void deleteList() {
+        head = null;
+        tail = null;
+        size = 0;
+    }
+
+    // This is an instance method, so you can access the head, tail, and the Node class
+    public int count(E item) {
+        int count = 0;
+        Node<E> current = head;
+        while(current != null) {
+            if(item.equals(current.item)){
+                count++;
+            }
+
+            current = current.next;
+        }
+        return count;
+    }
+
+
+    //  3 5
+    //  4 7
+    //  1 2
+    public static DoublyLinkedList<Integer> merge(DoublyLinkedList<Integer> listA, DoublyLinkedList<Integer> listB){
+        DoublyLinkedList<Integer> out =  new DoublyLinkedList<>();
+        while(listA.size() >0  && listB.size() > 0) {
+            if(listA.get(0)  > listB.size()) {
+                out.add(listA.get(0));
+                listA.remove(0);
+            } else {
+                out.add(listB.get(0));
+                listB.remove(0);
+            }
+        }
+        while(listA.size() != 0) {
+            out.add(listA.remove(0));
+        }
+        while(listB.size() != 0) {
+            out.add(listB.remove(0));
+        }
+
+
+        return out;
+    }
+
+    public E get(int index){
+        return this.getNode(index).item;
+    }
 
 
     public boolean add (E item){
