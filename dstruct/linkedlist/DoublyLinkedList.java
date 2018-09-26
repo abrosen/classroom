@@ -64,6 +64,19 @@ public class DoublyLinkedList<E> {
         return out;
     }
 
+    // 5 4 3 2 1
+    //
+    public void reverse(){
+        DoublyLinkedList<E> temp = new DoublyLinkedList<>();
+        while(this.size != 0){
+            E item = this.remove(0);
+            temp.add(0,item);
+        }
+        this.head = temp.head;
+        this.tail = temp.tail;
+        this.size = temp.size;
+    }
+
     public E get(int index){
         return this.getNode(index).item;
     }
