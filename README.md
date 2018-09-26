@@ -6,9 +6,11 @@ If you are antoher instructor, I merely request credit me in passing if you use 
 
 Classes are organized by grokable folder name, but not by course number, as those change from school to school.
 
+## itp
+This fold contain material I used for introduction to computer science in Python
 
 ## intro
-This folder contains everything for introduction to computer science.
+This folder contains everything for introduction to computer science in Java.
 
 ## dstruct
 This is my data structures course
