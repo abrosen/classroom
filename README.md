@@ -32,3 +32,7 @@ I include them because you might find that interesting?
 ### I can't find file X...
 Not really a question, but a common enough comment.  If it is code written in class, I may not have posted it yet.  Check the time of the last changes.
 
+### I want a challenge
+ - ProjectEuler.net
+ - AdventOfCode.com
+ - Email me
