@@ -6,9 +6,11 @@ If you are antoher instructor, I merely request credit me in passing if you use 
 
 Classes are organized by grokable folder name, but not by course number, as those change from school to school.
 
+## itp
+This fold contain material I used for introduction to computer science in Python
 
 ## intro
-This folder contains everything for introduction to computer science.
+This folder contains everything for introduction to computer science in Java.
 
 ## dstruct
 This is my data structures course
@@ -30,3 +32,7 @@ I include them because you might find that interesting?
 ### I can't find file X...
 Not really a question, but a common enough comment.  If it is code written in class, I may not have posted it yet.  Check the time of the last changes.
 
+### I want a challenge
+ - ProjectEuler.net
+ - AdventOfCode.com
+ - Email me
