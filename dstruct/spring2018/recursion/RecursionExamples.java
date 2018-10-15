@@ -1,5 +1,3 @@
-package recursion;
-
 public class RecursionExamples {
 
 
@@ -56,10 +54,6 @@ public class RecursionExamples {
 		return fibr(n, new long[n+1]);
 	}
 	
-	
-	
-
-
 	private static long fibr(int n, long[] fibs) {
 		if(n <= 2) {
 			return 1;
@@ -87,7 +81,7 @@ public class RecursionExamples {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// System.out.println(Long.MAX_VALUE);
-		System.out.println(fib(100));
+		System.out.println(fib(50));
 	}
 
 }

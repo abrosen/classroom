@@ -37,7 +37,7 @@ public class RecursionExamples {
 
 
     public static void foo() {
-        System.out.println("foo!");
+        //System.out.println("foo!");
         foo();
     }
 
@@ -88,6 +88,56 @@ public class RecursionExamples {
     }
 
 
+
+    // base^power
+    // 2 5  ->  2^5
+    //
+
+
+    // 2^5 = 2*2*2*2*2  =32  =2 * 2^4
+    // 2^6 = 2*2*2*2*2*2  = 2^5 * 2
+    // x^0 = 1
+    // x^(-n) = 1/x^n
+    public static double power(int base, int exp){
+        if(exp == 0 ){
+            return 1;
+        } else if(exp < 0) {
+            return 1.0 / power(base, exp * -1);
+        }
+        else {
+            return base * power(base, exp - 1);
+        }
+
+    }
+
+    // 60 15
+    // 6  80
+
+    // gcd(bigger, smaller)
+    // if the bigger is divisible by the smaller
+    //    gcd is smaller
+    // else
+    //    gcd(smaller, bigger % smaller)
+    public static int gcd(int bigger, int smaller) {
+        if(bigger < smaller){
+            gcd(smaller, bigger);
+        }
+        if(bigger % smaller == 0){
+            return smaller;
+        }
+        else {
+            return gcd(smaller , bigger % smaller);
+        }
+    }
+
+
+
+    // 97  17  12
+    // 17  12   5
+    // 12  5    2
+    // 5   2    1
+    // 2   1
+
     // 1 + 2 + 3 ... + (n-1) + n
     // 5 + 4 + 3 + 2 + 1
     // 5 + summation(4)
@@ -100,10 +150,15 @@ public class RecursionExamples {
     }
 
 
-    public static void main(String[] args) {
 
-        foo();
+
+    public static void main(String[] args) {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println(i);
+        }
+
+
         //printChars("hello");
-        //System.out.println(summation(5));
+        //System.out.println(gcd(66,15));
     }
 }
