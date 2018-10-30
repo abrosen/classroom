@@ -4,6 +4,52 @@ public class BinaryTree<E extends Comparable<E>> {
     private Node<E> root;
     //private int size;
 
+    public static int sumTree(Node<Integer> root) {
+       if(root== null) {
+           return 0;
+       }
+       
+       int center = 0;
+       if( root.item % 2 == 0) { 
+           center = root.item;
+       }
+       int left = sumTree(root.left);
+       int right = sumTree(root.right);
+       return center + left + right;
+    }
+    /*
+    public static <T> boolean equals(Node<T> treeA, Node<T> treeB) {
+        if(treeA == null && treeB ==null) {
+            return true; 
+        } 
+        else if(treeA != null && treeB ==null) {
+            return false;
+        }
+        else if(treeA == null && treeB != null){
+            return false;
+        } else {
+            if(treeA.item.equals(treeB.item)){
+                boolean leftSame =  equals(treeA.left, treeB.left);
+                boolean rightSame = equals(treeA.right, treeB.right);
+                return leftSame && rightSame;
+            } else {
+                return false;
+            }
+            
+        }
+    }
+*/
+    public static int numberOfChars(Node<String> root) {
+        if(root == null) {
+            return 0;
+        }
+        //int numCharsRoot  = root.item.length();
+        //int numCharsLeft  = numberOfChars(root.left);
+        //int numCharsRight = numberOfChars(root.right);
+        return root.item.length() + numberOfChars(root.left) + numberOfChars(root.right);
+        
+    }
+    
     public BinaryTree() {
         this.root = null;
         //this.size = 0;
@@ -143,9 +189,9 @@ public class BinaryTree<E extends Comparable<E>> {
         }
         String output = "";
 
-        output += root.item + " ";
+        
         output += toString(root.left);
-
+        output += root.item + " ";
         output += toString(root.right);
         return output;
 
@@ -183,6 +229,8 @@ public class BinaryTree<E extends Comparable<E>> {
         }
     }
 
+
+
     public static void main(String[] args) {
         BinaryTree<Integer> tree = new BinaryTree<Integer>();
         tree.add(5);
@@ -201,6 +249,9 @@ public class BinaryTree<E extends Comparable<E>> {
 
         tree.remove(1);
 
+        System.out.println(tree);
+        
+        //tree.root = tree.rightRotate(tree.root);
         System.out.println(tree);
     }
 
