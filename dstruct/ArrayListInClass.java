@@ -23,7 +23,7 @@ public class ArrayListInClass {
             }
             if (countA != countB) { return false; }
 
-        }x
+        }
         return true;
     }
 }
