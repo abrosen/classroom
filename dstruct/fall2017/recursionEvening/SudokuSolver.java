@@ -11,9 +11,9 @@ public class SudokuSolver {
 			col = 0;
 			
 		}
-                if(row >= 9) {
+        if(row >= 9) {
 				return true;
-                }
+        }
 
 		if(board[row][col] != 0) {
 			return solve(board,row, col+1);
