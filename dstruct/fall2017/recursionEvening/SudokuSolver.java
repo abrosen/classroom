@@ -19,7 +19,7 @@ public class SudokuSolver {
 			return solve(board,row, col+1);
 		}
 
-		for(int i = 1; i<=9;i++ ) {
+		for(int i = 1; i<=9 ;i++ ) {
 			if(canPlace(board,row,col,i)) {
 				board[row][col] = i;
 				if(solve(board,row,col+1)) {
