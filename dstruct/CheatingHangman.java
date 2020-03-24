@@ -16,7 +16,7 @@ public class CheatingHangman {
 
 
     public static HashMap<String, List<String>> generateWordFamilies(HashSet<Character> guessedLetters,
-                                                                     ArrayList<String> wordList){
+                                                                     List<String> wordList){
 
         return null;
 
