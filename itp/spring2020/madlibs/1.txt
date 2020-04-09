@@ -1,0 +1,12 @@
+The Minister for [NOUN] (Sir [FIRST_NAME] Pearce) 
+said today that acting on the
+information which appeared in the
+Eastern press in regard to the use of
+personnel of the Military Forces with
+[PLURAL_NOUN], which had been provided 
+at the request of the State Government of [DIRECTION] Australia, 
+and farmers whose crops were being [VERB_PAST_TENSE] by
+the incursion of large numbers of [PLURAL_NOUN]
+into the outer fringe of the [CROP] belt
+of that State, he had withdrawn the
+personnel armed with the [PLURAL_NOUN].
