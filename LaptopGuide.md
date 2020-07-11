@@ -3,14 +3,15 @@ You don't need a good laptop as a programming student, or a great one.
 You do need one you can rely on, that you can get to work in about a minute or less of hitting the power button, and that has a battery life of lecture's duration.
 
 However, not everyone can simply go out and buy a new laptop.
-Sometimes we need to make due with what 
+Sometimes we need to make due with what is availble.
+
 
 
 TL;DR Students in my class are required to have a laptop.
 Be happy with it.
 If you are not happy with it, you should look at the options in this guide. 
 
-If you cannot afford a 
+If you cannot afford a laptop, please speak to me as soon as you possibly can.
 
 # Using a Laptop for note-taking
 
