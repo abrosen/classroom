@@ -1,4 +1,68 @@
-# Specs 
+# The importance of a decent laptop
+You don't need a good laptop as a programming student, or a great one.
+You do need one you can rely on, that you can get to work in about a minute or less of hitting the power button, and that has a battery life of lecture's duration.
+
+However, not everyone can simply go out and buy a new laptop.
+Sometimes we need to make due with what 
+
+
+TL;DR Students in my class are required to have a laptop.
+Be happy with it.
+If you are not happy with it, you should look at the options in this guide. 
+
+If you cannot afford a 
+
+# Using a Laptop for note-taking
+
+Using a laptop to take notes may not be the smartest move in my class.
+This may surprise you given the giant wall of text you just read.
+However, numerous studies have shown that your ability to recall the stuff you're taking notes about is much better when you write it rather than using a laptop.
+Even if recall was as good taking notes by hand versus by typing, your laptop is still a giant distraction machine. 
+Exception:  Using a stylus on a touchscreen device is probably okay.  
+Just remember your laptop is a distraction machine.
+
+
+
+
+# Operating Systems
+Windows vs MacOS
+
+It doesn't matter, but programming on ChomeOS (a chromebook) or iOS (an ipad) presents unique challenges.
+In the end, the choice of operating system doesn't matter for programming and merely reflects the environment and workspace you like the look of.
+
+Or be daring and speak to me about installing a linux distribution.
+
+
+### Best Linux distros for beginners:
+https://pop.system76.com/
+https://ubuntu.com/
+https://elementary.io/
+
+If you need a much lighter operating system for your old system:
+https://lubuntu.net/
+
+
+
+# Reliability
+If you can't rely on your laptop, you should clean it, install Linux on it, or get a new one.
+
+What do I mean by you needing a reliable laptop?
+Too often I see students struggling with their laptop, waiting a long time for it to boot and load their IDE.
+
+### Option 1: Clean
+As you use your system, you fill it with programs you don't need.
+This is especially true for Windows, but don't just pat yourself on the back because you use Linux.
+If you're anything like me, you tinker with window managers and theming and random configs all the time.
+However, if you're running Linux, you probably don't need this guide.
+
+Most students with slow laptops are running way too many programs at boot and have tons of programs they don't need.
+
+
+
+
+
+# Buying a new Laptop
+## Specs 
 - A decent laptop with some compromises and no issues will be 350-500
 - A great laptop will be 800-1000
 - Anything above is overkill for a student.
@@ -23,31 +87,11 @@ This makes them fasters and more resiliant to damage.
 
 - Screen: Avoid TN if possible.  IPS is great. 1080p more than enough for smaller screens.
 
-# Operating Systems
-Windows vs MacOS
 
-It doesn't matter, but programming on ChomeOS (a chromebook) or iOS (an ipad) presents unique challenges.
-In the end, the choice of operating system doesn't matter for programming and merely reflects the environment and workspace you like the look of.
-
-Or be daring and speak to me about installing a linux distribution.
+## Recommendations:
 
 
-### Best Linux distros for beginners:
-https://pop.system76.com/
-https://ubuntu.com/
-https://elementary.io/
-
-If you need a much lighter operating system for your old system:
-https://lubuntu.net/
-
-
-
-
-
-# Recommendations:
-
-
-## How much money do I actually need to spend?
+### How much money do I actually need to spend?
 
 - Not ask much as you think
 - 500-600 will serve you thru college.
@@ -62,9 +106,9 @@ Things that make sense for a university student who is on the move.
 - Better battery life
 
 
-## Actual recommendations:
+### Actual recommendations:
 
-### Budget Choices
+#### Budget Choices
 
 The below items should be more than capable of handling any programming work an undergraduate needs to handle
 
@@ -86,7 +130,7 @@ https://www.amazon.com/Acer-Display-Graphics-Keyboard-A515-43-R19L/dp/B07RF1XD36
 - Windows 10 s, https://support.microsoft.com/en-us/help/4456067/windows-10-switch-out-of-s-mode 
 
 
-### Budget not a concern
+#### Budget not a concern
 
 Dell XPS [https://www.dell.com/en-us/shop/dell-laptops/sr/laptops/xps-laptops]
 - 900 and up
@@ -101,7 +145,7 @@ Asus Zenbook
 
 
 
-### Apple
+#### Apple
 
 With apple systems, the lowest specs are probably sufficient if you purchase a new machine.
 
@@ -113,7 +157,7 @@ https://www.apple.com/macbook-air/
 
 
 
-### Super Cheap option:
+#### Super Cheap option:
 https://www.youtube.com/watch?v=8grooZWbH9Y
 
 https://www.youtube.com/watch?v=lU2RbQcQP8E
