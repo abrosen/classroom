@@ -1,0 +1,5 @@
+print(5 + 5)
+print(max(4, 1, 5, 6))
+print(min(1,2,0,-100))
+print(min(1,2,0,-100))
+print(max(1, min(2, 3)))
