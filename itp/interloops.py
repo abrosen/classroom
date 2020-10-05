@@ -57,7 +57,6 @@ def riddler():
                 if thou != hund and thou != tens and thou != ones and  hund != tens and hund != ones  and tens != ones:
                     return num
 
-
 print(numVowel("hello world"))
 print(numEvens(0))
 print(isArmstrong(370))
