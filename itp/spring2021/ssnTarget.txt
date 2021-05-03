@@ -1,0 +1,4 @@
+Alice 111-11-1111
+Bob has a social security number 222-22-2222 and we need to keep that private
+again, 111-11-1111 and 222-22-2222, not 123-12-1223
+although those are social security
