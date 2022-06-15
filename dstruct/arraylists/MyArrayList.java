@@ -49,13 +49,15 @@ public class MyArrayList<E> {
     private void reallocate(){
         //doubles or 1.5x capacity
         //don't do +1 capacity
+        capacity = 2 * capacity;
+        
         E[] newData = (E[]) new Object[capacity];
         for(int i = 0; i < theData.length; i++) {
             newData[i] =  theData[i];
         }
 
         theData = newData;
-        capacity = 2 * capacity;
+        
 
     }
 
