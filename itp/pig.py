@@ -3,10 +3,10 @@ import random
 def roll():
     return random.randint(1,6)
 
-def autoPig():
+def autoPig(holdValue = 20): # part 1 and 3
     total = 0
     done = False
-    while total < 20 and not done:
+    while total < holdValue and not done:
         result =  roll()
         #print("Roll:", result)
         if result == 1:
@@ -17,10 +17,10 @@ def autoPig():
     #print("Turn Total:", total)
     return total
 
-def holdAt20(trials):
+def holdAtX(trials, holdValue):  # part 2 and 3
     outcomes = {}
     for _ in range(trials):
-        turnTotal = autoPig()
+        turnTotal = autoPig(holdValue)
         if turnTotal in outcomes:
             outcomes[turnTotal] +=1
         else:
@@ -29,4 +29,18 @@ def holdAt20(trials):
         print(turnTotal,  outcomes[turnTotal]/trials)
 
 
-holdAt20(10000)
+def holdAtTargetOrGoal(score, holdValue = 20): # part 4
+    total = 0
+    done = False
+    while total < holdValue and not done and total + score <100:
+        result =  roll()
+        #print("Roll:", result)
+        if result == 1:
+            total = 0
+            done = True
+        else:
+            total += result  
+    #print("Turn Total:", total)
+    return total
+
+holdAtX(100000,100)
