@@ -43,7 +43,7 @@ public class SudokuSolver {
 	private static boolean squareSafe(int[][] board, int row, int col, int val) {
 		// TODO Auto-generated method stub
 		int rowCorner = row / 3 * 3;
-		int colCorner = col / 3 * 3;
+		int colCorner = col - (col %3);  // other way
 		for(int i = 0 ; i < 3; i++) {
 			for(int j = 0; j < 3; j++) {
 				if(board[rowCorner+i][colCorner+j]  == val) {
