@@ -34,7 +34,7 @@ def holdAtXOutcomes(trials, limit):
     for score in outcomes:
         print(score, outcomes[score]/trials)
 
-
+n
 def holdAt20orGoal(limit ,score):
     turnTotal = 0
     while turnTotal < limit and turnTotal + score < 100 :
