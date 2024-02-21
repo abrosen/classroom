@@ -31,27 +31,7 @@ public class MazeGridPanel extends JPanel{
 		finish.setBackground(Color.RED);
 		stack.push(start);
 		
-		/*
-		for(int i = 0 ; i < 19; i++) {
-			Cell current = stack.peek();
-			current.setBackground(Color.GREEN);
-			stack.push(maze[current.row+1][current.col]);
-		}
 		
-		for(int i = 0; i< 19; i++) {
-			Cell current = stack.peek();
-			current.setBackground(Color.GREEN);
-			if(!current.eastWall){
-				stack.push(maze[current.row][current.col+1]);
-			}
-		}
-		
-		while() {
-			Cell current = stack.peek();
-			
-			visited(current.row,current.col)
-			//maze[current.row ][current.col] 
-		}*/
 
 	}
 
