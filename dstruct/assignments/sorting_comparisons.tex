@@ -1,0 +1,90 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+
+
+\author{Dr. Andrew Rosen}
+\title{Sorting }
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		As we have learned, sorting algorithms perform two operations: comparisons, to check to see if two pieces of data are in so kind of order, and exchanges, which swap to pieces of data.
+		In this lab you will implement various sorting algorithms and compare the amount of time it takes for them to run.
+	\end{abstract}
+
+
+	\section{Premise}
+	Implement Insertion Sort, Quicksort, and one other sorting algorithm from the list below.\footnote{Remember to cite if you use code from the book or class.}
+	\begin{itemize}
+		\item Shellsort
+		\item Mergesort
+		\item Heapsort
+		\item Timsort (+7 points EC)
+	\end{itemize}
+	
+	Modify the sorting algorithms to keep track of
+	\begin{itemize}
+		\item The runtime of the algorithm
+		\item The number of comparisons.
+		\begin{itemize}
+			\item Here, a comparison is whenever we are checking to see if two items are out of order.  It does \textit{not} include checking to see if we're out of bounds or anything index related.
+		\end{itemize}
+		\item The number of exchanges.
+		\begin{itemize}
+			\item Whenever two items get swapped or an item gets copied or moved, that's an exchange.
+		\end{itemize}
+	\end{itemize}
+%	Click \href{http://docs.oracle.com/javase/6/docs/api/java/lang/System.html#nanoTime%28%29}{here to see how you can measure the elapsed time in nanoseconds using \texttt{System.nanoTime().}})
+		
+
+	\section{Testing and Collecting Data}
+	Test your algorithms on differently sized lists or arrays of integers.
+	A good test will have many data points of varying magnitudes and should test each algorithm at each size multiple times.  
+	For example, a decent test might test lists that have sizes that are powers of 10s (10, 100, 1000, 10000 \dots), and each data point/line in your output would be the average of the results of 100 runs on an array of a specific size. 
+	
+	
+	Output your data to a file.
+	It may be useful for you to output your data into a \texttt{.csv} file if you plan on using Excel in the next portion.
+	\subsection{Implementation Hint}
+	SIncve you can only ever return one value in Java, you will need to work around that to gather the number of comparisons and exchanges performed.
+	I reccomend one (only one) of the following:
+	\begin{itemize}
+		\item Creating a Data object, which represents the data collected for a single sample (a single run on sorting algorithm) and thus contains fields for exchanges and comparisons.  Modify the sorting algorithms to hold these.
+		\item Using static variables to keep track of exchanges and comparisons and reset them for every sample.
+	\end{itemize}
+
+	Also, this is one assigment you are actually free to lookup the algorithm from the book or online, then modify it, \textbf{but you must cite your source.}
+	
+	\section{Presenting Your Data}
+	
+	Your objective is to present your data in such a way that a non-programmer can tell which algorithms perform better.
+	We will give you a fair amount of freedom here.
+	Some options include:
+	\begin{itemize}
+		\item A well formatted table.
+		\item Graphing your data (using a program such as Excel).
+	\end{itemize}
+	
+	\section{Grading}
+ 	
+ 	\begin{description}
+ 		\item[10 points] Insertion Sort
+ 		\item[30 points] Quicksort
+ 		\item[20 points] Third sorting algorithm of student's choice.
+ 		\item[20 points] Data is collected.
+ 		\item[15 points] Data is presented in a meaningful way.
+ 		\item[5 points]  Data presentation is aesthetically pleasing.
+ 		\item[7 points Extra]  Implement Timsort as the third algorithm.
+ 	\end{description}
+ 	
+ 	
+\end{document}

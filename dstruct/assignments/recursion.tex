@@ -1,0 +1,115 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xskak}
+
+\usepackage{DejaVuSansMono}
+
+\usepackage{chessboard}
+
+\lstset{language=Java, basicstyle= \ttfamily\small, showstringspaces=false} 
+
+
+\author{Andrew Rosen}
+\title{Recursion Puzzles}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	In this lab you will implement recursive solutions to classic CS questions.
+	One will be a chess problem, and the other is solving Sudoku.
+	Each part is worth 75 points
+%	Choose and complete two of the three following problems.
+\end{abstract}
+
+
+\section{Backtracking with Recursion  - Featuring Chess}
+\textbf{Choose and complete one of the two following chess problems}.  These problems can be solved using the backtracking algorithm shown below.
+
+\begin{lstlisting}
+boolean solve(board,  pos){
+
+	if( pos is such that there is nothing left to solve){
+		return true;
+	}
+	
+	for each possible choice {
+		if(valid(choice)){
+			mark board at pos with choice;
+			if(solve(board, pos + 1) == true){
+				return true;
+			}
+			unmark board at pos if needed, as choice was invalid
+		}
+	}
+	clear any choices entered at pos on board;
+	
+	return false; // backtrack
+}
+
+
+\end{lstlisting}
+
+\newpage
+\subsection{The Eight Queens Problem}
+Write a recursive method which solves the eight queens problem.  You must find a state where you can place eight queens on a chessboard such that no queen can capture another queen.  Queens can move and capture pieces in the same row, column, or any diagonal.
+
+
+You may use an $ 8 \times 8$ \texttt{int[][]} array to represent your chess board.
+An example solution is below.
+
+\begin{center}
+	
+\chessboard[setwhite={Qa1,Qb7,Qc4,Qd6,Qe8,Qf2,Qg5,Qh3},showmover=false]
+\end{center}
+
+Hint: only one queen can be placed in each column. This means we can simplify the problem a bit by asking ``for this current column, which row can I put a queen on?''
+
+\newpage 
+\subsection{Knight's Tour (More Challenging)}
+Write a program to solve the Knight's Tour.  
+In the Knight's Tour, we place a Knight on the chess board and move him until he visits each square of the chess board exactly once.\footnote{Please do not sack Constantinople on your way to the answer.}
+A knight moves two squares horizontally or vertically and then one square in the axis it did not move it, creating a sort of ``L'' shaped (see below).
+A square counts as visited once the knight lands in it.
+
+
+
+\begin{center}
+	\chessboard[pgfstyle=knightmove,
+	markmoves={c3-e2, c3-e4,c3-d5,c3-b5,c3-a4,c3-a2,c3-b1,c3-d1},
+	showmover=false,
+	setwhite={Nc3}
+	]
+	
+	
+\end{center}
+
+You may start your knight anywhere you like.
+Your output should be either the chess board, but with each square marked by a number to designate the order in which the square was visited, or by listing the moves the knight makes.
+If you can figure out a better way to represent your answer, we are open to that too.
+
+
+
+
+
+\newpage
+
+\section{Sudoku}
+Write a program that can solve a Sudoku puzzle.
+You can put the puzzle you want to solve into your source code as a 2D integer array.
+See the lecture videos on the homework for more details.
+
+You can use the same base recursive-backtracking algorithm that was used in the 8 queens problem.
+
+
+\subsection{Extra Credit: 10 points}
+\href{https://projecteuler.net/problem=96}{Solve Project Euler Problem 96.  This entire line is a link to it.}
+\end{document}

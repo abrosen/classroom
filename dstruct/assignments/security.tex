@@ -1,0 +1,33 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+
+
+\author{Andrew Rosen}
+\title{Security}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	Solve \href{https://projecteuler.net/problem=79}{problem on 79 Project Euler.}  
+	This is a Graph problem in disguise, so the key is to figure out what is node and what is an edge.
+	In other words, what are the things that have relationships in this problem and what defines their relationships? 
+	
+	Once you figure that out, you can use topological sort to solve the problem.
+	Create an account on the site to confirm your answer.
+
+ 	You can do this in any language, but a key to solving the problem is finding the \textbf{indegree} of each node.
+ 	The indegree of a node in a directed graph is the number of edges that have that node as a destination,\footnote{The indegree and outdegree of a undirected graph are the same thing, so it's just called the \textbf{degree}} or the number of edges that lead  \textit{into} the node.
+ 	JUNG has a built in method for graphs to do this.  
+ 	
+ 	The other thing to keep in mind for JUNG is that you can't make two edges with the same value.
+ 	So if you're using a String to represent edges, you can't have two edges with the value of \texttt{"A"}.
+ 	
+\end{document}

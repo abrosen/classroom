@@ -1,0 +1,52 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+
+
+\author{Andrew Rosen}
+\title{Palindromes}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	The purpose of this assignment is to familiarize you with stacks and queues.  The assignment is split into 2 tasks.  Extra Credit is available on the second page.
+\end{abstract}
+
+
+
+\section{Stacks and Queues}
+The first part of the assignment is to take the Node, Stack, and Queue files and implement them (IE fill in the methods).  
+Do not extend your class.
+References are to be singly linked.  
+
+\section{Palindrome Detection}
+Part two requires you to create another class to implement a Palindrome detector that uses a Stack and a Queue.  
+It must fulfill the following requirements:
+
+
+\begin{enumerate}
+	\item The program must loop to take input from the user.  The input is a single word.  If the word is quit, go to step 4.  Otherwise we look to see if the input is an Palindrome (lowercase and uppercase are considered the same letter)
+	\item It must use both the Stack and the Queue you just wrote to detect Palindromes.  To do this, push each letter into the stack and enqueue/offer each letter to the queue. 
+	\item  Output whether or not the inputed string is an Palindrome.
+	\item Once the user types quit, print out all the detected Palindromes in reverse order, then terminate.  Use the proper data structure.
+	\item You cannot use arrays.
+\end{enumerate}
+
+
+\newpage
+\section{Extra Credit: 10 points}
+Rather than detecting if a word is a palindrome, instead tell me if an entire String is a palindrome.  An entire String is a palindrome iff the string reads the same backwards to forwards, ignoring capitalization and punctuation. For example, if you fufill the extra credit, the following line should be detected as a Palindrome.
+
+\begin{verbatim}
+"Go hang a salami, I'm a lasagna hog"
+\end{verbatim}
+	
+\end{document}

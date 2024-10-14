@@ -1,0 +1,152 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\lstset{language=Java, basicstyle= \ttfamily\small,  showstringspaces=false} 
+
+\author{Dr. Andrew Rosen}
+\title{I Love Being Right}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	\section{Let's play a game}
+	For this lab, we will be making a small text based game to teach you and your friends a little bit about human psychology and get you back into the habit of programming.
+	If you're in lab, we'll start with a small demo of the game.
+	\href{http://www.nytimes.com/interactive/2015/07/03/upshot/a-quick-puzzle-to-test-your-problem-solving.html?_r=0}{You can find the game here for reference.}
+	When the game is over and we all know how to play it, flip to the next page.
+	
+	
+	\newpage
+	
+	This game plays off of a simple cognitive bias called the confirmation bias. 
+	People are predisposed to look for information that confirms their beliefs.
+	If you believe the rule is something like ``each number is twice as large as the last number'' you are going to make guesses that confirm your belief.
+	Each positive answer will further reinforce your belief.
+	
+	In science, we need to check our hypotheses by attempting to \textit{falsify} them, or prove them wrong.
+	We need to attempt to disprove the rule, by checking sequences that don't follow our hypothesized rule.
+	
+	
+	\newpage
+	
+	\section{Let's make a game}
+	
+	Your task is to recreate this game in Java, albeit in a simpler, text-based format.
+	The player enters sequences of three numbers to see if they follow the hidden rule.
+	When the player has entered their sequence, the program should reply whether or not the sequence followed the rule.
+	
+	You can use the same rule or create your own.  
+	Regardless, the game is played the same way.
+	
+	\subsection{How}
+	
+	Create a loop which gives the player instructions on what to input.
+	Then read input from the player.
+	The input will be either one of three options:
+	\begin{itemize}
+		\item If the user enters the word ``answer'' or some other string you choose to indicate the player is ready to end the game and guess.
+		\begin{itemize}
+			\item In this case, prompt the user to guess our game's rule, then output the answer.
+			\item You don't have to tell the user if he guessed the rule correctly;  it would be beyond the scope of this Lab.
+		\end{itemize}
+		\item Three numbers separated by spaces.
+		\begin{itemize}
+			\item Let's call a trio of numbers and the corresponding output a \texttt{Guess}.  Once a user makes a \texttt{Guess}, we will store it (how?  see below).
+			\item If the user enters a sequence that follows the rules, output ``Yes!''
+			\item Otherwise output ``No.''
+		\end{itemize}
+		 \item  If the user enters the word ``previous'', display all the previous \texttt{Guess}es the user made (the numbers and whether they were right or wrong) 
+		 \item  Treat any other entry as an exception.
+	\end{itemize}
+	
+	
+	
+	
+	\subsection{Error Handling}
+	Your program should not crash, regardless of what I input.  
+	Possible inputs I might enter:
+	\begin{itemize}
+		\item Too many numbers for a guess
+		\item Too few numbers for a guess
+		\item An invalid option
+		\item Complete gibberish
+	\end{itemize}
+	
+	
+	\subsection{Storing your answers}
+	You will be storing your answers in an \texttt{ArrayList} of \texttt{Guess} objects.
+	A \texttt{Guess} is a very simple.  It should hold three numbers\footnote{int or double is your choice, but if you choose ints, you need to handle rejecting inputted doubles} and have a \texttt{toString()} method to make printing out its contents easier.
+	
+	
+	An \texttt{ArrayList} object is much like an array.  
+	In fact, for now, think of it as a smart array which can grow to whatever size you need.
+	It doesn't need a predefined size.
+	\href{https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html}{All the methods for the \texttt{ArrayList}  can be found by clicking on this sentence;  there are a lot of them, but we will see that \texttt{ArrayList}  is powerful and simple.}
+	
+	Once you import \texttt{java.util.ArrayList}, you can create an ArrayList like so:
+	
+	\begin{lstlisting}
+	ArrayList list =  new ArrayList();
+	\end{lstlisting}
+	
+	and add anything you want by doing this:
+	
+	\begin{lstlisting}
+	list.add(thingYouWantToAdd);
+	\end{lstlisting}
+	
+	However, you will be seeing warning such as ``\texttt{ArrayList} is a raw type. References to generic type \texttt{ArrayList<E>} should be parameterized''
+	This is because \texttt{ArrayList} uses generics, which we will cover in more detail during lecture.
+	Briefly, a generic type in Java, such as \texttt{ArrayList}, lets you define what you use it with.  
+	With collections of objects, such as \texttt{ArrayList}, we can specify that we want an ArrayList that holds just one kind of object.
+	For example, if I wanted to create an \texttt{ArrayList} of \texttt{Guess} objects, we do the following\footnote{This assumes you have already made your guess object}:
+	
+	\begin{lstlisting}
+	ArrayList<Guess> list =  new ArrayList<Guess>();
+	\end{lstlisting}
+		
+	and then you can add guesses to your \texttt{ArrayList}.
+	
+	
+	\newpage
+	\subsection{Useful Methods}
+	There are a many ways to parse your input, but only a few that are easy.
+	Here are a few different suggestions.  
+	\begin{itemize}
+		\item \textbf{Only} use \texttt{Scanner.nextLine()} to read in input.  Using \texttt{Scanner.nextInt()} and \texttt{Scanner.nextLine()} together will lead to confusion. 
+		\item  To turn a string into a number, use \texttt{Integer.parseInt( theString)} or \texttt{Double.parseInt( theString)}.
+		\begin{itemize}	
+			\item \texttt{String.split()} is useful for breaking apart strings seperated by \textit{delimiters}, such as commas, or, in this program, spaces.
+			\item \texttt{String.split()} returns an array of Strings.
+		\end{itemize}
+		\item How do I tell what the string the user input is? First, check either if it's the word ``answer'', then check if it's the word ``previous'' first.  Otherwise assume it's sequence of numbers three numbers and try to parse them.  If the user enters anything else, this will cause an error which you can catch with the \texttt{try catch} block. 
+		\item Regular expressions are also useful here, if you know how to use them.  If you do not know how to use regular expressions and feel like you already know a good amount of programming \textbf{learn regular expressions.}\footnote{Regular Expressions or regex are not often formally taught as part of a CS curriculum. Messing around with them for two hours might be the most two useful hours of the semester. }
+		\item Break up individual  tasks into methods.  For example you can have one method to grab user input, another method to detect whether a guess follows a rule, and to print all the \texttt{Guess} objects stored in an \texttt{ArrayList}.
+	\end{itemize}
+	
+	
+	
+	
+	
+	
+	\section{Your Grade}
+	Turn in your assignment on Canvas and come see the Professor or a TA to demo your work for credit.
+	
+	The breakdown is as follows.
+	
+	\begin{description}
+		\item[40 points] The user inputs three numbers and the program tells whether or not they follow the hidden rule.
+		\item[10 points] The user input ``answer'' ends the game.
+		\item[20 points] The \texttt{try catch } block ensures the program does not crash.
+		\item[20 points] Guesses are stored in an \texttt{ArrayList} and can be recalled by entering the word ``previous.''
+	\item[10 points] The code is relatively organized and does not resemble a mass of spaghetti.
+	\end{description}
+
+	
+\end{document}

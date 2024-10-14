@@ -1,0 +1,36 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+
+
+\author{Andrew Rosen}
+\title{Quicksort }
+\date{Due April 15th at 6am}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		In this lab you will implement an in-place version of Quicksort.
+	\end{abstract}
+
+
+	Implement an in-place quicksort algorithm which sorts an array of generic, comparable objects.  \textbf{Make the following enhancement:}
+	
+	\begin{itemize}
+		\item If the array or subarray  has 64 or fewer elements, sort using insertion sort. 
+		This means that at any stage during the quicksort, the \textbf{subarray} you are sorting has 64 or fewer items, \textbf{use insertion sort over that range of items} instead.
+		
+	\end{itemize}
+	
+	Test your quicksort algorithm by creating large and small arrays and sorting them.
+	
+
+ 	
+\end{document}

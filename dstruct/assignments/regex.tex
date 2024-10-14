@@ -1,0 +1,68 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\pagestyle{fancy}
+
+\author{Andrew Rosen}
+\title{Regex}
+
+\begin{document}
+    
+    
+    
+    \maketitle
+    
+    
+    \begin{abstract}
+    	This is extra credit and an incentive for you to learn Regex.  Each page is worth 5 points.
+    \end{abstract}
+    
+    \section{Regex Dictionary}
+    For this section, I want you to answer questions about the dictionary file \texttt{words.txt}.  If you're using a Unix system, feel free to use the dictionary file included on your computer.
+    Some words begin with capital letters!
+    Please include each regex with your answer.
+    \begin{enumerate}
+    	\item I like animals.  How many words contain the word 'cat' or 'dog' in them?
+    	\item Four letters words are supposedly naughty.  How many four letter words are there?
+        \item Do more words end in ``ing'' or ``ion?''
+        \item How many words contain a ``q'' not immediately followed by a ``u.''
+        \item How many words have no vowels?
+        \item How many words with two vowels \textbf{in a row} are there?
+        \item How many words with at least two vowels are there?  The vowels need not be adjacent, like in the previous problem.
+    \end{enumerate}
+    
+    
+    If you are having trouble, please see this \href{http://www.regexr.com/}{link}.
+    
+    \newpage
+    \section{More Regex}
+    
+    \begin{enumerate}
+    	\item What is the difference between \texttt{.* }and \texttt{.*?} ?
+    	\item  How would you write a regex that matches the full name of someone
+    	whose last name is Nakamoto? You can assume that the first name that
+    	comes before it will always be one word that begins with a capital letter.
+    	The regex must match the following:
+    	\begin{itemize}
+    		\item 'Satoshi Nakamoto'
+    		\item 'Alice Nakamoto'
+    		\item 'RoboCop Nakamoto'
+    	\end{itemize}
+    	but not the following:
+    	\begin{itemize}
+    		\item 'satoshi Nakamoto' (where the first name is not capitalized)
+    		\item 'Mr. Nakamoto' (where the preceding word has a nonletter character)
+    		\item 'Nakamoto' (which has no first name)
+    		\item 'Satoshi nakamoto' (where Nakamoto is not capitalized)
+    	\end{itemize}
+    
+    	\item Create a regex which matches the strings twenty, twenty-one, twenty-three,\dots,ninety-nine
+    \end{enumerate}
+
+\end{document}

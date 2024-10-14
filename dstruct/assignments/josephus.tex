@@ -1,0 +1,110 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+
+
+\author{Dr. Andrew Rosen}
+\title{The Josephus Problem}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	In this lab you will solve the Josephus Problem by implementing the Circular Linked List provided to you.  This text is adapted from Programming Project 5 of Chapter 2 in Koffman and Wolfgang. 
+\end{abstract}
+\section{The Josephus Problem}
+The Josephus problem is named after the historian Titus Flavius Josephus (37 - 100 CE). 
+Josephus participated in the Jewish uprising against the Roman Empire.  
+This revolt ended exactly as other attempts to stand against the might of Rome did  --  poorly. 
+
+During the siege of Yodfat, Josephus and forty other soldiers were about to be captured by the Romans. 
+They decided they would rather die than become Roman slaves and committed suicide by drawing lots.  
+Josephus and one other soldier remained in the end, decided that a life under the Romans as a slave was better than no life, and surrendered. 
+Josephus became a slave and gained his freedom a few years later.
+He later went on to write a number of documents which give insight to the religions of that time period.
+
+While the exact nature of the lot-drawing process is unknown, the following approach is generally thought to be how it's done.
+
+\subsection{The Problem}
+Soldiers form a circle and count around the circle some predetermined number.  
+When this number is reached, that person receives a lot and leaves the circle.
+The count starts over with the next person.
+
+Build a Circular Linked List with the provided code to represent the circle of people and simulate the problem.
+Your program should use two parameters, $n$ people and $k$, where $k$ is the number of counts. In other words, we successively remove the $k$th person from the list.
+
+If you need more information, Wikipedia has a pretty decent article.
+
+
+\section{The Code}
+To complete the task, you need to fill in the missing code.
+I've included code to create an \texttt{Iterator}.
+
+An \texttt{Iterator} is an object that iterates over another object --  in this case, a circular linked list.
+You can use the \texttt{.next()} method to advance the \texttt{Iterator} to the next item (the first time you call it, the iterator will travel to node at index 0).
+Using iterator's \texttt{.remove()} removes the node the iterator is currently at.
+
+Say that we had a \texttt{CircularLinkedList} that looked like this:
+
+\begin{verbatim}
+A ==> B ==> C ==> D ==> E ==> 
+\end{verbatim}
+
+Calling \texttt{.next()} three times will advance the iterator to index 2. 
+Calling \texttt{.remove()} once will remove the node at index 2.
+\begin{verbatim}
+A ==> B ==> D ==> E ==> 
+\end{verbatim}
+Calling \texttt{.remove()} once more will remove the node now at index 2.
+\begin{verbatim}
+A ==> B ==> E ==> 
+\end{verbatim}
+
+The \texttt{Iterator} methods handle wrapping around the \texttt{CircularLinkedList}.
+\textbf{Be sure to create the iterator using \texttt{l.iterator()} and after you've added all the nodes to the list}, where \texttt{l} is your \texttt{CircularLinkedList}.
+
+
+
+
+\newpage
+\section{Examples}
+Here are examples of rings with $n$ people and every $k$th person is removed from the ring.\\
+For a ring of $n=5$ and the count $k=2$:\footnote{We are starting with 1 as opposed to 0.}
+
+\begin{verbatim}
+1 ==> 2 ==> 3 ==> 4 ==> 5 ==> 
+1 ==> 3 ==> 4 ==> 5 ==> 
+1 ==> 3 ==> 5 ==> 
+3 ==> 5 ==> 
+3
+
+\end{verbatim}
+
+
+
+For a ring of $n=13$ and $k=2$
+\begin{verbatim}
+1 ==> 2 ==> 3 ==> 4 ==> 5 ==> 6 ==> 7 ==> 8 ==> 9 ==> 10 ==> 11 ==> 12 ==> 13 ==> 
+1 ==> 3 ==> 4 ==> 5 ==> 6 ==> 7 ==> 8 ==> 9 ==> 10 ==> 11 ==> 12 ==> 13 ==> 
+1 ==> 3 ==> 5 ==> 6 ==> 7 ==> 8 ==> 9 ==> 10 ==> 11 ==> 12 ==> 13 ==> 
+1 ==> 3 ==> 5 ==> 7 ==> 8 ==> 9 ==> 10 ==> 11 ==> 12 ==> 13 ==> 
+1 ==> 3 ==> 5 ==> 7 ==> 9 ==> 10 ==> 11 ==> 12 ==> 13 ==> 
+1 ==> 3 ==> 5 ==> 7 ==> 9 ==> 11 ==> 12 ==> 13 ==> 
+1 ==> 3 ==> 5 ==> 7 ==> 9 ==> 11 ==> 13 ==> 
+3 ==> 5 ==> 7 ==> 9 ==> 11 ==> 13 ==> 
+3 ==> 7 ==> 9 ==> 11 ==> 13 ==> 
+3 ==> 7 ==> 11 ==> 13 ==> 
+3 ==> 7 ==> 11 ==> 
+3 ==> 11 ==> 
+11
+\end{verbatim}
+
+	
+\end{document}

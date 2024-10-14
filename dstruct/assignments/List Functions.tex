@@ -1,0 +1,143 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\lstset{language=Java, basicstyle= \ttfamily\small,  showstringspaces=false} 
+
+\author{Dr. Andrew Rosen}
+\title{List Methods and Strings}
+
+\begin{document}
+	
+	\maketitle
+	
+	In this exercise, you will learn to write static methods that use \texttt{List}s and Strings.
+	Each of these is around the difficulty of some exam questions.
+	If you need to make a new \texttt{List} as part of the method, implement it using an \texttt{ArrayList}.
+	Read footnotes for hints.
+	
+	Your answers for this homework will be used for your next homework.
+	
+	\newpage
+	
+	\section{Static Generic Methods}
+	Most of the methods we write in class \textit{won't} be static, but that's no reason not to learn how to do that.
+	Java makes writing generic methods look intimidating, but in reality, it's not so bad.
+	I'll walk you through how to do it by showing what we want to do, hitting an error, and then showing you how to resolve the error.
+	
+	Suppose we want to write a method called \texttt{in}, which given a \texttt{List} and an item, checks to see if the \texttt{List} contains that item. \footnote{This exists as an instance method under a different name within any \texttt{List}, but let's pretend it doesn't.}
+	We don't know what type the item will, nor do we know what kind of stuff the List will be holding, as that will change from one program to another, and we want this method to be able to be used in any kind of context.  
+	That means we want it to be generic.
+	However, if we write 
+	
+	\begin{lstlisting}
+	//this is an error
+	public static boolean in(List<E> list,  E item){
+	
+	}
+	\end{lstlisting}
+	We get ``E cannot be resolved to a type'' as an error.
+	This happens because Java doesn't know that you want to use \texttt{E} as the symbol for generics for this method.
+	We can fix this by adding a \texttt{<E>} in between \texttt{static} and our return type, like so:
+	
+	\begin{lstlisting}
+	public static <E> boolean in(List<E> list,  E item){
+	
+	}
+	\end{lstlisting}
+	
+	The big difference here between a class that uses a generic, like \texttt{ArrayList}, and the static methods you write here is that the generic type only exists for the method. 
+	
+	
+	\subsection{When Not to Use The Above}
+	You do not have to have method methods generic when we know what types we are using.
+	For instance, if we know we are dealing with a list of integers (\texttt{List<Integer>}), we \textbf{don't} have to write anything generic in.
+	We just write:
+	\begin{lstlisting}
+	
+	public static returnType myMethod(List<Integer> list){
+	
+	}
+	
+	\end{lstlisting}
+	
+	For each method, ask yourself ``Does this method need to work on a \texttt{List} of any type, or just a single type?''
+	If any type, you need to make a generic method.
+	If a single type, then you don't need to use a generic in that method.
+	
+	
+	\newpage
+	\section{The Methods}
+	For each of the following, create a \textbf{static} method with the appropriate inputs and outputs.
+	Call each of them in the \texttt{main} method.
+	\
+	
+	\subsection{Uniqueness}
+	Write a method called \texttt{unique()} which takes in a \texttt{List} and returns true if all the items in the \texttt{List} are unique.
+	All the items are unique if none of them are the same.\footnote{Use the equals() method.} 
+	Return false otherwise.
+
+	
+	\subsection{All Multiples}
+	Write a method named \texttt{allMultiples()} which takes in a \texttt{List} of integers and an \texttt{int}.
+	The method returns a new \texttt{List} of integers which contains all of the numbers from the input list which are multiples of the given \texttt{int}.
+	For example, if the \texttt{List} is $ [1, 25, 2 ,5, 30,19, 57, 2, 25] $ and 5 was provided, the new list should contain $ [25,5,30,25] $.
+
+	
+	\subsection{All Strings of Size}
+	Write a method named \texttt{allStringsOfSize()} which takes in a \texttt{List<String>} and an \texttt{int length}.
+	The method returns a new \texttt{List<String>} which contains all the Strings from the original list that are \texttt{length}  characters long.
+	For example, if the inputs are \texttt{["I", "like", "to", "eat", "eat", "eat", "apples", "and", "bananas"]} and \texttt{3}, the new list is \texttt{["eat", "eat", "eat", "and"]}.
+	
+	
+	\subsection{isPermutation}
+	Write a method called \texttt{isPermutaion()} which takes in two \texttt{List} objects which contain the same types.
+	It returns \texttt{true} if the Lists are permutations of each other and false if not.
+	Two lists are permutations if they contain the same elements, including the same number of duplicates, but they don't have to contain the elements in the same order.
+	For example, \texttt{[1,2, 4]} and \texttt{[2,1,4]} are permutations of each other. 	
+
+
+
+	\subsection{String To List of Words}
+	Write a method called \texttt{stringToListOfWords()} which takes in a \texttt{String} converts it into a list of words.
+	We assumes that each word in the input string is separated by whitespace.\footnote{The \texttt{split()} method of \texttt{String} can split an input up along a provided special string called a regular expression or \textit{regex}.  A regex is much like a code for pattern, and \texttt{split()} will match anything in that pattern. The regex \texttt{"\textbackslash\textbackslash s+"} matches any amount of whitespace.}
+	
+	If our input String is \texttt{"Hello, world!"}, then the output should be \texttt{["Hello,", "world!"]}.
+	For extra credit, sanitize the String, cleaning it up so that we remove the punctuation and other extraneous characters such that the output in the above example would become \texttt{["Hello", "world"]}
+	
+	This method returns \texttt{List<String>}.
+	
+	
+	
+	\subsection{Remove All Instances}
+	Write a method called \texttt{removeAllInstances()} which takes in a \texttt{List} and item\footnote{In other words, the first parameter is a list of generics and the other input is a single item of the same type the list holds.}.
+	The method then proceeds to remove each item in the list that matches the given item.
+	For example, if the method is passed the \texttt{List<Integer>} \texttt{[1, 4, 5, 6, 5, 5, 2]} and the \texttt{Integer }\texttt{5}, the method removes all \texttt{5}'s from the \texttt{List}.
+	The \texttt{List} then becomes \texttt{[1, 4, 6, 2]}.
+	It should return nothing, since the changes the \texttt{List} it was provided.
+	\footnote{This one is extremely tricky, since removing an item shifts the indexes.}
+	
+	
+	
+	
+	
+	
+	\section{Your Grade}
+	Turn in your assignment on Canvas and come see the Professor or a TA to demo your work for credit.
+	
+	\begin{description}
+		\item[90 points] Each method working properly is worth 15 points.  5 points of each method is for using generics correctly.
+		\item[10 points] Code is neat and properly indented.
+		\item[5 points extra credit] Described in the  \texttt{stringToListOfWords()} section.
+		
+	\end{description}
+
+
+	\subsection{Demoing}
+	Be prepared to explain how you solved \texttt{removeAllInstances()} and that it works on the test cases, as well as one other method the TA will choose.
+	
+\end{document}
