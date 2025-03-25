@@ -80,6 +80,7 @@ Most students with slow laptops are running way too many programs at boot and ha
 - Storage: The amount of things your computer can save locally. Storage size is not actually too high of a priority,  as so much can be stored/done online.  The most important thing is getting a SSD, as it is so much faster than a Hard Disk.
 Solid state drives have no moving parts, as opposed to older Hard Disk Drives, which do.
 This makes them fasters and more resiliant to damage.
+If you plan on gaming, you definately should get at least 1TB.  Games be big.
  
  
 
