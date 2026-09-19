@@ -15,15 +15,15 @@ for line in rows[1:]:
     attack =  int(parts[7])
     defense = int(parts[8])
     buff = hp + attack + defense
-    type1 = parts[3].strip('"')
-    type2 = parts[4].strip('"')
-    if type1 == "Fire" or type2 == "Fire":
-        for index in range(len(buffest)):
-            current = buffest[index]
-            if buff > current[1]:
-                buffest.pop()
-                buffest.insert(index,[name,buff])
-                break
+    #type1 = parts[3].strip('"')
+    #type2 = parts[4].strip('"')
+    #if type1 == "Fire" or type2 == "Fire":
+    for index in range(len(buffest)):
+        current = buffest[index]
+        if buff > current[1]:
+            current[0] = name
+            current[1] = buff
+            break
 print(buffest)
 
 
